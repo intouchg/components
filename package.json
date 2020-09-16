@@ -1,0 +1,71 @@
+{
+  "name": "@i/components",
+  "version": "0.0.11",
+  "description": "React component library for the Intouch Design System",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "repository": "https://intazdoweb.intouchsol.com/IntouchDesignSystem/IntouchDesignSystem/_git/components",
+  "author": "Intouch Group",
+  "license": "UNLICENSED",
+  "sideEffects": false,
+  "scripts": {
+    "prebuild": "rimraf dist && npm run typegen",
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
+    "prepare": "npm run build",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false --strict --jsx react",
+    "typegen": "tsc",
+    "test": "echo tests are missing"
+  },
+  "dependencies": {
+    "@babel/runtime": "7.11.2",
+    "@i/theme": "latest",
+    "@styled-system/should-forward-prop": "5.1.5"
+  },
+  "devDependencies": {
+    "@babel/core": "7.11.6",
+    "@babel/plugin-transform-runtime": "7.11.5",
+    "@babel/preset-env": "7.11.5",
+    "@babel/preset-react": "7.10.4",
+    "@babel/preset-typescript": "7.10.4",
+    "@i/eslint-config": "latest",
+    "@rollup/plugin-babel": "5.2.0",
+    "@rollup/plugin-node-resolve": "9.0.0",
+    "@types/react": "16.9.49",
+    "@types/react-dom": "16.9.8",
+    "@types/styled-components": "5.1.3",
+    "@types/styled-system": "5.1.10",
+    "@types/styled-system__should-forward-prop": "5.1.1",
+    "@typescript-eslint/eslint-plugin": "3.10.1",
+    "@typescript-eslint/parser": "3.10.1",
+    "babel-eslint": "10.1.0",
+    "babel-plugin-styled-components": "1.11.1",
+    "eslint": "7.8.1",
+    "eslint-plugin-react": "7.20.6",
+    "eslint-plugin-react-hooks": "4.1.0",
+    "react": "16.13.1",
+    "rimraf": "3.0.2",
+    "rollup": "2.26.11",
+    "rollup-plugin-eslint": "7.0.0",
+    "rollup-plugin-terser": "7.0.2",
+    "rollup-plugin-size-snapshot": "0.12.0",
+    "styled-components": "5.2.0",
+    "styled-system": "5.1.5",
+    "typescript": "3.9.7"
+  },
+  "peerDependencies": {
+    "react": ">=16.13",
+    "react-spring": ">=9.0.0-rc.3",
+    "styled-components": ">=5.1",
+    "styled-system": ">=5.1.5",
+    "typescript": ">=3.9"
+  },
+  "peerDependenciesMeta": {
+    "react-spring": {
+      "optional": true
+    },
+    "typescript": {
+      "optional": true
+    }
+  }
+}
