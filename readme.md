@@ -43,8 +43,9 @@ Form
  - [ ] Select
  - [ ] Switch/Toggle
 
-Interactive
+Molecules
  - [ ] Calendar
+
 
 
 ### Architecture

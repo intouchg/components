@@ -1,11 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import { grid } from 'styled-system'
-import type { GridProps } from 'styled-system'
 import { Box } from './index'
 
-const Grid = styled(Box)<GridProps>`
-    ${grid}
+const Grid = styled(Box)<{
+    gridTemplate: string
+}>`
+    display: grid;
+    ${(props) => !props.gridTemplate ? ''
+        : `grid-template: ${props.gridTemplate};`
+    }
 `
 
 Grid.defaultProps = {}
