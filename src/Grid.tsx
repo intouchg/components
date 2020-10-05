@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Box } from './index'
 
 const Grid = styled(Box)<{
-    gridTemplate: string
+    gridTemplate?: string
 }>`
     display: grid;
     ${(props) => !props.gridTemplate ? ''
