@@ -12,9 +12,6 @@ const Flex = styled(Box)<FlexboxProps>`
 
 Flex.defaultProps = {
 	display: 'flex',
-	flexDirection: 'row',
-	alignItems: 'center',
-	justifyContent: 'space-evenly',
 }
 
 Flex.displayName = 'Flex'

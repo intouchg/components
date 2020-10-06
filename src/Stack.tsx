@@ -11,8 +11,6 @@ const Stack = styled(Box)<FlexboxProps>`
 Stack.defaultProps = {
 	display: 'flex',
 	flexDirection: 'column',
-	alignItems: 'center',
-	justifyContent: 'space-evenly',
 }
 
 Stack.displayName = 'Stack'
