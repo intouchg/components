@@ -28,7 +28,9 @@ export type StyleProps = LayoutProps
     & BackgroundProps
     & BorderProps
     & ShadowProps
-    & TypographyProps
+	& TypographyProps
+	
+export type VariantProps = { variant?: string }
 
 export const hoverColorStyleFunction = (props: any) => css`
 	&:hover {
