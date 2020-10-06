@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { variant } from 'styled-system'
-import { styleFunctions, hoverColorStyleFunction, activeColorStyleFunction } from './core'
+import { styleFunctions, variantsFunction, hoverColorStyleFunction, activeColorStyleFunction } from './core'
 import type { StyleProps, VariantProps, HoverColorProps, ActiveColorProps } from './core'
 
 const Button = styled.button<
@@ -20,7 +19,7 @@ const Button = styled.button<
     ${styleFunctions}
     ${hoverColorStyleFunction}
 	${activeColorStyleFunction}
-	${variant({ scale: 'buttons', variants: {} })}
+	${variantsFunction('buttons')}
 `
 
 Button.defaultProps = {

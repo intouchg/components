@@ -1,4 +1,4 @@
-import { system, compose, space, layout, position, color, background, border, shadow, typography } from 'styled-system'
+import { system, compose, variant, space, layout, position, color, background, border, shadow, typography } from 'styled-system'
 import isHTMLProp from '@emotion/is-prop-valid'
 import memoize from '@emotion/memoize'
 import { css } from 'styled-components'
@@ -29,7 +29,9 @@ export type StyleProps = LayoutProps
     & BorderProps
     & ShadowProps
 	& TypographyProps
-	
+
+export const variantsFunction = (themePropName: string) => variant({ scale: themePropName, variants: { primary: {} } })
+
 export type VariantProps = { variant?: string }
 
 export const hoverColorStyleFunction = (props: any) => css`

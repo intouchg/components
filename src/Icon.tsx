@@ -1,10 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import { system } from 'styled-system'
-import { styleFunctions } from './core'
-import type { StyleProps } from './core'
+import { styleFunctions, variantsFunction } from './core'
+import type { StyleProps, VariantProps } from './core'
 
-const Icon = styled.svg<StyleProps & { fill?: string }>`
+const Icon = styled.svg<StyleProps
+	& VariantProps
+	& { fill?: string }
+>`
 	box-sizing: border-box;
 	${styleFunctions}
 	${system({
@@ -13,11 +16,13 @@ const Icon = styled.svg<StyleProps & { fill?: string }>`
 			scale: 'colors',
 		},
 	})}
+	${variantsFunction('icons')}
 `
 
 Icon.defaultProps = {
-	fill: 'icon.fill',
-	backgroundColor: 'icon.backgroundColor',
+	variant: 'primary',
+	// fill: 'icon.fill',
+	// backgroundColor: 'icon.backgroundColor',
 }
 
 Icon.displayName = 'Icon'
