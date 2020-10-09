@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { defaultVariantName } from '@i/theme'
 import { system } from 'styled-system'
 import { styleFunctions, variantsFunction } from './core'
 import type { StyleProps, VariantProps } from './core'
@@ -20,7 +21,7 @@ const Icon = styled.svg<StyleProps
 `
 
 Icon.defaultProps = {
-	variant: 'primary',
+	variant: defaultVariantName,
 	// fill: 'icon.fill',
 	// backgroundColor: 'icon.backgroundColor',
 }

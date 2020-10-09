@@ -3,7 +3,7 @@ import isHTMLProp from '@emotion/is-prop-valid'
 import memoize from '@emotion/memoize'
 import { css } from 'styled-components'
 import { props as defaultThemePropStrings } from '@styled-system/should-forward-prop'
-import { customThemeProps } from '@i/theme'
+import { customThemeProps, defaultVariantName } from '@i/theme'
 import type { LayoutProps, PositionProps, SpaceProps, ColorProps, BackgroundProps, BorderProps, ShadowProps, TypographyProps } from 'styled-system'
 
 export const callAll = (...fns: Function[]) => (...args: any[]) => fns.forEach(fn => fn && fn(...args))
@@ -30,7 +30,7 @@ export type StyleProps = LayoutProps
     & ShadowProps
 	& TypographyProps
 
-export const variantsFunction = (themePropName: string) => variant({ scale: themePropName, variants: { primary: {} } })
+export const variantsFunction = (themePropName: string) => variant({ scale: themePropName, variants: { [defaultVariantName]: {} } })
 
 export type VariantProps = { variant?: string }
 

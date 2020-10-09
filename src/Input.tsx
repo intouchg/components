@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { defaultVariantName } from '@i/theme'
 import { styleFunctions, variantsFunction } from './core'
 import type { StyleProps, VariantProps } from './core'
 
@@ -16,7 +17,7 @@ const Input = styled.input.attrs((props) => ({
 `
 
 Input.defaultProps = {
-	variant: 'primary',
+	variant: defaultVariantName,
 	// color: 'input.color',
 	// backgroundColor: 'input.backgroundColor',
 	// fontFamily: 'input.fontFamily',

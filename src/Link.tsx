@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { defaultVariantName } from '@i/theme'
 import { styleFunctions, variantsFunction, hoverColorStyleFunction, activeColorStyleFunction, visitedColorStyleFunction } from './core'
 import type { StyleProps, VariantProps, HoverColorProps, ActiveColorProps, VisitedColorProps } from './core'
 
@@ -21,7 +22,7 @@ const Link = styled.a<
 `
 
 Link.defaultProps = {
-	variant: 'primary',
+	variant: defaultVariantName,
 	// color: 'link.color',
 	// backgroundColor: 'link.backgroundColor',
 	// hoverColor: 'link.hoverColor',

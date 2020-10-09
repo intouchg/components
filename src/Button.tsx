@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { defaultVariantName } from '@i/theme'
 import { styleFunctions, variantsFunction, hoverColorStyleFunction, activeColorStyleFunction } from './core'
 import type { StyleProps, VariantProps, HoverColorProps, ActiveColorProps } from './core'
 
@@ -23,7 +24,7 @@ const Button = styled.button<
 `
 
 Button.defaultProps = {
-	variant: 'primary',
+	variant: defaultVariantName,
 	// color: 'button.color',
 	// backgroundColor: 'button.backgroundColor',
 	// hoverColor: 'button.hoverColor',
