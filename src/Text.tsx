@@ -6,8 +6,8 @@ import type { StyleProps, VariantProps } from './core'
 
 const Text = styled.span<StyleProps & VariantProps>`
 	box-sizing: border-box;
-	${styleFunctions}
 	${variantsFunction('texts')}
+	${styleFunctions}
 `
 
 Text.defaultProps = {
