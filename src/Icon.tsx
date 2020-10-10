@@ -5,11 +5,13 @@ import { system } from 'styled-system'
 import { styleFunctions, variantsFunction } from './core'
 import type { StyleProps, VariantProps } from './core'
 
-const Icon = styled.svg<StyleProps
+const Icon = styled.svg<
+	StyleProps
 	& VariantProps
 	& { fill?: string }
 >`
 	box-sizing: border-box;
+	${variantsFunction('icons')}
 	${styleFunctions}
 	${system({
 		fill: {
@@ -17,7 +19,6 @@ const Icon = styled.svg<StyleProps
 			scale: 'colors',
 		},
 	})}
-	${variantsFunction('icons')}
 `
 
 Icon.defaultProps = {

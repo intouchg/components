@@ -14,11 +14,11 @@ const Link = styled.a<
 >`
 	box-sizing: border-box;
 	cursor: pointer;
+	${variantsFunction('links')}
     ${styleFunctions}
     ${hoverColorStyleFunction}
     ${activeColorStyleFunction}
 	${visitedColorStyleFunction}
-	${variantsFunction('links')}
 `
 
 Link.defaultProps = {

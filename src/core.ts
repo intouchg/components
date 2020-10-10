@@ -85,7 +85,7 @@ export type ActiveColorProps = {
 }
 
 export const visitedColorStyleFunction = (props: any) => css`
-	&:hover {
+	&:visited {
 		${system({
 			visitedColor: {
 				property: 'color',
@@ -108,3 +108,29 @@ export type VisitedColorProps = {
     visitedBackgroundColor?: string
     visitedBorderColor?: string
 }
+
+export const focusColorStyleFunction = (props: any) => css`
+	&:focus {
+		${system({
+			focusColor: {
+				property: 'color',
+				scale: 'colors',
+			},
+			focusBackgroundColor: {
+				property: 'backgroundColor',
+				scale: 'colors',
+			},
+			focusBorderColor: {
+				property: 'borderColor',
+				scale: 'colors',
+			},
+		})}
+	}
+`
+
+export type FocusColorProps = {
+    focusColor?: string
+    focusBackgroundColor?: string
+    focusBorderColor?: string
+}
+

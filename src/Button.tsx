@@ -16,11 +16,11 @@ const Button = styled.button<
     border: 0;
     font-family: inherit;
     text-decoration: none;
-    cursor: pointer;
+	cursor: pointer;
+	${variantsFunction('buttons')}
     ${styleFunctions}
     ${hoverColorStyleFunction}
 	${activeColorStyleFunction}
-	${variantsFunction('buttons')}
 `
 
 Button.defaultProps = {
