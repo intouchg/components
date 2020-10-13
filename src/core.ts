@@ -19,7 +19,15 @@ const themePropStrings = defaultThemePropStrings.concat(customThemePropStrings)
 export const createShouldForwardProp = (propStringsToPass: string[]) =>
     memoize((prop) => !themePropStrings.includes(prop) && (isHTMLProp(prop) || propStringsToPass.includes(prop))) as any
 
-export const styleFunctions = compose(layout, position, space, color, background, border, shadow, typography)
+export const variantsFunction = (themePropName: string) => variant({ scale: themePropName, variants: { [defaultVariantName]: {} } })
+
+export type VariantProps = { variant?: string }
+
+export const textTransformStyleFunction = system({ textTransform: true })
+
+export type TextTransformProps = { textTransform?: string }
+
+export const styleFunctions = compose(layout, position, space, color, background, border, shadow, typography, textTransformStyleFunction)
 
 export type StyleProps = LayoutProps
     & PositionProps
@@ -29,10 +37,7 @@ export type StyleProps = LayoutProps
     & BorderProps
     & ShadowProps
 	& TypographyProps
-
-export const variantsFunction = (themePropName: string) => variant({ scale: themePropName, variants: { [defaultVariantName]: {} } })
-
-export type VariantProps = { variant?: string }
+	& TextTransformProps
 
 export const hoverColorStyleFunction = (props: any) => css`
 	&:hover {

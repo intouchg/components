@@ -1,14 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import { system } from 'styled-system'
 import { Box } from './index'
 
 const Grid = styled(Box)<{
     gridTemplate?: string
 }>`
     display: grid;
-    ${(props) => !props.gridTemplate ? ''
-        : `grid-template: ${props.gridTemplate};`
-    }
+    ${system({ gridTemplate: true })}
 `
 
 Grid.defaultProps = {}
