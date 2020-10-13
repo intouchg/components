@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
 import { styleFunctions } from './core'
 import type { StyleProps } from './core'
 
-const CheckboxContainer = styled.div<StyleProps>`
+const CheckboxContainer = styled.div`
     display: inline-block;
     vertical-align: middle;
     cursor: pointer;
@@ -34,19 +34,37 @@ const BaseCheckbox = ({
     checked: boolean
     onClick: (checked: boolean) => void
     children: React.ReactNode
-}) => (
-	<CheckboxContainer
-		className={className}
-		onClick={() => onClick(!checked)}
-	>
-		<HiddenCheckbox
-			id={id}
-            checked={checked}
-            onChange={(event) => onClick(event.target.checked)}
-		/>
-		{children}
-	</CheckboxContainer>
-)
+}) => {
+    const wasClicked = useRef(false)
+
+	const handleClick = () => {
+		wasClicked.current = true
+		onClick(!checked)
+	}
+
+	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		if (wasClicked.current) {
+			wasClicked.current = false
+			return
+		}
+
+		onClick(event.target.checked)
+	}
+
+    return (
+        <CheckboxContainer
+            className={className}
+            onClick={handleClick}
+        >
+            <HiddenCheckbox
+                id={id}
+                checked={checked}
+                onChange={handleChange}
+            />
+            {children}
+        </CheckboxContainer>
+    )
+}
 
 const Checkbox = styled(BaseCheckbox)<StyleProps>`
     box-sizing: border-box;
