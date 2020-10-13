@@ -41,7 +41,8 @@ const BaseCheckbox = ({
 	>
 		<HiddenCheckbox
 			id={id}
-			checked={checked}
+            checked={checked}
+            onChange={(event) => onClick(event.target.checked)}
 		/>
 		{children}
 	</CheckboxContainer>
