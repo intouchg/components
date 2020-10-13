@@ -3,15 +3,13 @@ import styled from 'styled-components'
 import { system, grid } from 'styled-system'
 import { styleFunctions } from './core'
 import type { StyleProps } from './core'
-import type { GridProps } from 'styled-system'
+import type { GridProps, FlexGrowProps, FlexShrinkProps } from 'styled-system'
 
 const Box = styled.div<
     StyleProps
     & GridProps
-    & {
-        flexGrow?: string | number
-        flexShrink?: string | number
-    }
+    & FlexGrowProps
+    & FlexShrinkProps
 >`
     box-sizing: border-box;
     ${styleFunctions}
