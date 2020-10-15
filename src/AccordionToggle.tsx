@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { AccordionContext } from './Accordion'
+import { AccordionContext } from './index'
 
 const AccordionToggle = ({
 	id,

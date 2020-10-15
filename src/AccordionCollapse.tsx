@@ -1,5 +1,5 @@
 import React, { useContext, useState, useRef, useLayoutEffect } from 'react'
-import { AccordionContext } from './Accordion'
+import { AccordionContext } from './index'
 
 // TO DO: Recalculate measurements on debounced window resize.
 const AccordionCollapse = ({

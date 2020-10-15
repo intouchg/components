@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { system } from 'styled-system'
-import { Box } from './Box'
+import { Box } from './index'
 
 const Grid = styled(Box)<{ gridTemplate?: string }>`
     display: grid;

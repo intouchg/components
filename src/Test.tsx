@@ -1,22 +1,24 @@
 import React from 'react'
-import { Accordion } from './Accordion'
-import { AccordionToggle } from './AccordionToggle'
-import { AccordionCollapse } from './AccordionCollapse'
-import { Box } from './Box'
-import { Button } from './Button'
-import { Flex } from './Flex'
-import { Form } from './Form'
-import { FormItem } from './FormItem'
-import { FormError } from './FormError'
-import { Heading } from './Heading'
-import { Image } from './Image'
-import { Input } from './Input'
-import { Link } from './Link'
-import { Stack } from './Stack'
-import { Tabs } from './Tabs'
-import { TabActivate } from './TabActivate'
-import { TabContent } from './TabContent'
-import { Text } from './Text'
+import {
+	Accordion,
+	AccordionToggle,
+	AccordionCollapse,
+	Box,
+	Button,
+	Flex,
+	Form,
+	FormItem,
+	FormError,
+	Heading,
+	Image,
+	Input,
+	Link,
+	Stack,
+	Tabs,
+	TabActivate,
+	TabContent,
+	Text,
+} from './index'
 
 const Test = () => {
 	const preventDefault = (event: React.MouseEvent<HTMLElement>) => event.preventDefault()
