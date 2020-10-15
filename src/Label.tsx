@@ -6,6 +6,7 @@ import type { StyleProps, VariantProps } from './core'
 
 const Label = styled.label<StyleProps & VariantProps>`
 	box-sizing: border-box;
+	cursor: pointer;
 	${variantsFunction('labels')}
 	${styleFunctions}
 `

@@ -1,15 +1,15 @@
 {
   "index.esm.js": {
-    "bundled": 21562,
-    "minified": 21450,
-    "gzipped": 6666,
+    "bundled": 21577,
+    "minified": 21465,
+    "gzipped": 6671,
     "treeshaked": {
       "rollup": {
-        "code": 9511,
+        "code": 9526,
         "import_statements": 382
       },
       "webpack": {
-        "code": 16401
+        "code": 16416
       }
     }
   }
