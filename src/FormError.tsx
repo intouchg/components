@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import { FormContext } from './index'
-import type { FormErrorObject } from './index'
+import { FormContext } from './Form'
+import type { FormErrorObject } from './Form'
 
 const prioritySortDescending = ({ priority: a }: FormErrorObject, { priority: b }: FormErrorObject) => (b || 0) - (a || 0)
 

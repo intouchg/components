@@ -1,5 +1,6 @@
 import React, { createContext, useState } from 'react'
-import { TabActivate, TabContent } from './index'
+import { TabActivate } from './TabActivate'
+import { TabContent } from './TabContent'
 
 type TabsContext = {
     activeId: string | undefined

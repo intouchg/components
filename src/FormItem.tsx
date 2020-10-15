@@ -1,7 +1,7 @@
 import React, { useRef, useState, useContext } from 'react'
-import { FormContext } from './index'
+import { FormContext } from './Form'
 import { callAll } from './core'
-import type { FormItemValidator, FormItemValidatorObject, FormValidatorFunction, FormErrorObject, FormValidatorValidity } from './index'
+import type { FormItemValidator, FormItemValidatorObject, FormValidatorFunction, FormErrorObject, FormValidatorValidity } from './Form'
 
 export type GenericTarget = { value: string, type?: string }
 

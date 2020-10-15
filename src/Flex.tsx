@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { flexbox } from 'styled-system'
-import { Box } from './index'
+import { Box } from './Box'
 import type { FlexboxProps } from 'styled-system'
 
 // TO DO: Add props to allow wrapping at specified breakpoints

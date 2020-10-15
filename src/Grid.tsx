@@ -1,11 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { system } from 'styled-system'
-import { Box } from './index'
+import { Box } from './Box'
 
-const Grid = styled(Box)<{
-    gridTemplate?: string
-}>`
+const Grid = styled(Box)<{ gridTemplate?: string }>`
     display: grid;
     ${system({ gridTemplate: true })}
 `
