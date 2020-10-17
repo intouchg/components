@@ -26,13 +26,13 @@ const BaseCheckbox = ({
 	id,
 	className,
 	checked,
-	onClick,
+	onClick = () => {},
 	children,
 }: {
     id?: string
     className?: string
     checked: boolean
-    onClick: (checked: boolean) => void
+    onClick?: (checked: boolean) => void
     children: React.ReactNode
 }) => {
     const wasClicked = useRef(false)
