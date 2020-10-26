@@ -7,7 +7,7 @@ import type { StyleProps, VariantProps, HoverColorProps, FocusColorProps } from 
 const Input = styled.input.attrs((props) => ({
 	type: props.type || 'text',
 }))<
-	StyleProps
+	& StyleProps
 	& VariantProps
 	& HoverColorProps
 	& FocusColorProps

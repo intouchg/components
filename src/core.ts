@@ -29,7 +29,8 @@ export type TextTransformProps = { textTransform?: string }
 
 export const styleFunctions = compose(layout, position, space, color, background, border, shadow, typography, textTransformStyleFunction)
 
-export type StyleProps = LayoutProps
+export type StyleProps =
+	& LayoutProps
     & PositionProps
     & SpaceProps
     & ColorProps

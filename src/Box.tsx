@@ -1,23 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
-import { system, grid } from 'styled-system'
+import { flexbox, grid } from 'styled-system'
 import { styleFunctions } from './core'
 import type { StyleProps } from './core'
-import type { GridProps, FlexGrowProps, FlexShrinkProps } from 'styled-system'
+import type { GridProps, FlexboxProps } from 'styled-system'
 
 const Box = styled.div<
-    StyleProps
+    & StyleProps
+    & FlexboxProps
     & GridProps
-    & FlexGrowProps
-    & FlexShrinkProps
 >`
     box-sizing: border-box;
     ${styleFunctions}
+    ${flexbox}
     ${grid}
-    ${system({
-        flexGrow: true,
-        flexShrink: true,
-    })}
 `
 
 Box.displayName = 'Box'

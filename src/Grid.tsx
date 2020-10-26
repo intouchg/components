@@ -4,11 +4,12 @@ import { system } from 'styled-system'
 import { Box } from './index'
 
 const Grid = styled(Box)<{ gridTemplate?: string }>`
-    display: grid;
     ${system({ gridTemplate: true })}
 `
 
-Grid.defaultProps = {}
+Grid.defaultProps = {
+    display: 'grid',
+}
 
 Grid.displayName = 'Grid'
 

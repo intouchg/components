@@ -5,7 +5,7 @@ import { styleFunctions, variantsFunction, hoverColorStyleFunction, activeColorS
 import type { StyleProps, VariantProps, HoverColorProps, ActiveColorProps } from './core'
 
 const Button = styled.button<
-	StyleProps
+	& StyleProps
 	& VariantProps
     & HoverColorProps
     & ActiveColorProps

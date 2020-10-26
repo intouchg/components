@@ -4,7 +4,10 @@ import { defaultVariantName } from '@i/theme'
 import { styleFunctions, variantsFunction } from './core'
 import type { StyleProps, VariantProps } from './core'
 
-const Label = styled.label<StyleProps & VariantProps>`
+const Label = styled.label<
+	& StyleProps
+	& VariantProps
+>`
 	box-sizing: border-box;
 	cursor: pointer;
 	${variantsFunction('labels')}

@@ -66,7 +66,7 @@ const imageStyleFunctions = compose(layout, position, space, border, shadow)
 const shouldForwardProp = createShouldForwardProp([ 'aspectRatio' ])
 
 const Image = styled(BaseImage).withConfig({ shouldForwardProp })<
-    LayoutProps
+    & LayoutProps
     & PositionProps
     & SpaceProps
     & BorderProps

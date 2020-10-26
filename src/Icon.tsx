@@ -6,7 +6,7 @@ import { styleFunctions, variantsFunction } from './core'
 import type { StyleProps, VariantProps } from './core'
 
 const Icon = styled.svg<
-	StyleProps
+	& StyleProps
 	& VariantProps
 	& { fill?: string }
 >`

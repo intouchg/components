@@ -9,7 +9,10 @@ const extensions = ['.ts', '.tsx']
 
 const baseConfig = {
     input: './src/index.ts',
-    external: Object.keys(pkg.peerDependencies),
+    external: [
+        ...Object.keys(pkg.peerDependencies),
+        /@babel\/runtime/,
+    ]
 }
 
 const babelOptions = {

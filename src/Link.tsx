@@ -6,7 +6,7 @@ import type { StyleProps, VariantProps, HoverColorProps, ActiveColorProps, Visit
 
 // TO DO: Add visitedColor, activeColor, focusedColor (?) etc.
 const Link = styled.a<
-	StyleProps
+	& StyleProps
 	& VariantProps
     & HoverColorProps
     & ActiveColorProps
