@@ -25,9 +25,33 @@ export type VariantProps = { variant?: string }
 
 export const textTransformStyleFunction = system({ textTransform: true })
 
-export type TextTransformProps = { textTransform?: string }
+export type TextTransformProps = {
+	textTransform?:
+		| 'none'
+		| 'capitalize'
+		| 'uppercase'
+		| 'lowercase'
+		| 'initial'
+		| 'inherit'
+}
 
-export const styleFunctions = compose(layout, position, space, color, background, border, shadow, typography, textTransformStyleFunction)
+export const textDecorationStyleFunction = system({ textDecoration: true })
+
+export type TextDecorationProps = { textDecoration?: string }
+
+
+export const styleFunctions = compose(
+	layout,
+	position,
+	space,
+	color,
+	background,
+	border,
+	shadow,
+	typography,
+	textTransformStyleFunction,
+	textDecorationStyleFunction,
+)
 
 export type StyleProps =
 	& LayoutProps
@@ -39,6 +63,7 @@ export type StyleProps =
     & ShadowProps
 	& TypographyProps
 	& TextTransformProps
+	& TextDecorationProps
 
 export const hoverColorStyleFunction = (props: any) => css`
 	&:hover {
