@@ -31,6 +31,7 @@ export type TextTransformProps = {
 		| 'capitalize'
 		| 'uppercase'
 		| 'lowercase'
+		| 'unset'
 		| 'initial'
 		| 'inherit'
 }
