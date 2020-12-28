@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import { styleFunctions } from './core'
 import type { StyleProps } from './core'
 
-const CheckboxContainer = styled.div`
+const CheckboxContainer = styled.div<{ disabled?: boolean }>`
     display: inline-block;
     vertical-align: middle;
-    cursor: pointer;
+    cursor: ${(props) => props.disabled ? 'default' : 'pointer'};
 `
 
 const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
@@ -25,13 +25,15 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
 const BaseCheckbox = ({
 	id,
 	className,
-	checked,
+    checked,
+    disabled,
 	onClick = () => {},
 	children,
 }: {
     id?: string
     className?: string
     checked: boolean
+    disabled?: boolean
     onClick?: (checked: boolean) => void
     children: React.ReactNode
 }) => {
@@ -54,11 +56,13 @@ const BaseCheckbox = ({
     return (
         <CheckboxContainer
             className={className}
-            onClick={handleClick}
+            disabled={disabled}
+            onClick={!disabled ? handleClick : undefined}
         >
             <HiddenCheckbox
                 id={id}
                 checked={checked}
+                disabled={disabled}
                 onChange={handleChange}
             />
             {children}
