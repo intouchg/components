@@ -1,10 +1,10 @@
-import { system, compose, variant, space, layout, position, color, background, border, shadow, typography } from 'styled-system'
+import { system, compose, variant, space, layout, flexbox, position, color, background, border, shadow, typography } from 'styled-system'
 import isHTMLProp from '@emotion/is-prop-valid'
 import memoize from '@emotion/memoize'
 import { css } from 'styled-components'
 import { props as defaultThemePropStrings } from '@styled-system/should-forward-prop'
 import { customThemeProps, defaultVariantName } from '@i/theme'
-import type { LayoutProps, PositionProps, SpaceProps, ColorProps, BackgroundProps, BorderProps, ShadowProps, TypographyProps } from 'styled-system'
+import type { LayoutProps, FlexboxProps, PositionProps, SpaceProps, ColorProps, BackgroundProps, BorderProps, ShadowProps, TypographyProps } from 'styled-system'
 
 export const callAll = (...fns: Function[]) => (...args: any[]) => fns.forEach(fn => fn && fn(...args))
 
@@ -43,6 +43,7 @@ export type TextDecorationProps = { textDecoration?: string }
 
 export const styleFunctions = compose(
 	layout,
+	flexbox,
 	position,
 	space,
 	color,
@@ -56,6 +57,7 @@ export const styleFunctions = compose(
 
 export type StyleProps =
 	& LayoutProps
+	& FlexboxProps
     & PositionProps
     & SpaceProps
     & ColorProps
