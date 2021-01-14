@@ -133,7 +133,7 @@ const FormItem = ({
         }
         else if (formErrors[id]) {
             clearTimeout(onChangeTimeoutId.current)
-            onChangeTimeoutId.current = setTimeout(async () => handleChange(target, false), 350)
+            onChangeTimeoutId.current = setTimeout(async () => handleChange(target, false), 350) as any
         }
     }
 
