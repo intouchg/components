@@ -12,10 +12,6 @@ const baseButtonStyles = `
 	line-height: inherit;
 	text-decoration: none;
 	cursor: pointer;
-
-	&:active {
-		color: unset;
-	}
 `
 
 type ButtonProps = 
