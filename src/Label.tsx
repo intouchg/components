@@ -14,14 +14,7 @@ const Label = styled.label<
 	${styleFunctions}
 `
 
-Label.defaultProps = {
-	variant: defaultVariantName,
-	// color: 'label.color',
-	// backgroundColor: 'label.backgroundColor',
-	// fontFamily: 'label.fontFamily',
-	// fontSize: 'label.fontSize',
-	// fontWeight: 'label.fontWeight',
-}
+Label.defaultProps = { variant: defaultVariantName }
 
 Label.displayName = 'Label'
 

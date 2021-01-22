@@ -4,61 +4,50 @@ import { defaultVariantName } from '@i/theme'
 import { styleFunctions, variantsFunction, hoverColorStyleFunction, activeColorStyleFunction } from './core'
 import type { StyleProps, VariantProps, HoverColorProps, ActiveColorProps } from './core'
 
-const Button = styled.button<
-	& StyleProps
-	& VariantProps
-    & HoverColorProps
-    & ActiveColorProps
->`
-    box-sizing: border-box;
-    font-size: inherit;
-    line-height: inherit;
-    border: 0;
-    font-family: inherit;
-    text-decoration: none;
-	cursor: pointer;
-	${variantsFunction('buttons')}
-    ${styleFunctions}
-    ${hoverColorStyleFunction}
-	${activeColorStyleFunction}
-`
-
-Button.defaultProps = {
-	variant: defaultVariantName,
-	// color: 'button.color',
-	// backgroundColor: 'button.backgroundColor',
-	// hoverColor: 'button.hoverColor',
-	// hoverBackgroundColor: 'button.hoverBackgroundColor',
-	// hoverBorderColor: 'button.hoverBorderColor',
-	// activeColor: 'button.activeColor',
-	// activeBackgroundColor: 'button.activeBackgroundColor',
-	// activeBorderColor: 'button.activeBorderColor',
-	// borderColor: 'button.borderColor',
-	// border: 'button.border',
-	// borderWidth: 'button.borderWidth',
-	// borderStyle: 'button.borderStyle',
-	// borderRadius: 'button.borderRadius',
-	// fontFamily: 'button.fontFamily',
-	// fontSize: 'button.fontSize',
-	// fontWeight: 'button.fontWeight',
-}
-
-Button.displayName = 'Button'
-
-
-const InvisibleButton = styled(Button)`
-	background-color: transparent;
+const baseButtonStyles = `
+	box-sizing: border-box;
 	border: 0;
-	color: unset;
-	
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	text-decoration: none;
+	cursor: pointer;
+
 	&:active {
 		color: unset;
 	}
 `
 
-InvisibleButton.defaultProps = {
-	variant: undefined,
-}
+type ButtonProps = 
+	& StyleProps
+	& VariantProps
+	& HoverColorProps
+	& ActiveColorProps
+
+	
+const Button = styled.button<ButtonProps>`
+	${baseButtonStyles}
+	${variantsFunction('buttons')}
+	${styleFunctions}
+	${hoverColorStyleFunction}
+	${activeColorStyleFunction}
+`
+
+Button.defaultProps = { variant: defaultVariantName }
+
+Button.displayName = 'Button'
+
+
+const InvisibleButton = styled.button<ButtonProps>`
+	${baseButtonStyles}
+	background-color: transparent;
+	border: 0;
+	text-align: left;
+	${variantsFunction('buttons')}
+	${styleFunctions}
+	${hoverColorStyleFunction}
+	${activeColorStyleFunction}
+`
 
 InvisibleButton.displayName = 'InvisibleButton'
 

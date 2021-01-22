@@ -21,11 +21,7 @@ const Icon = styled.svg<
 	})}
 `
 
-Icon.defaultProps = {
-	variant: defaultVariantName,
-	// fill: 'icon.fill',
-	// backgroundColor: 'icon.backgroundColor',
-}
+Icon.defaultProps = { variant: defaultVariantName }
 
 Icon.displayName = 'Icon'
 

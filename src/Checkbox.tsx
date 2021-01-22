@@ -75,8 +75,6 @@ const Checkbox = styled(BaseCheckbox)<StyleProps>`
     ${styleFunctions}
 `
 
-Checkbox.defaultProps = {}
-
 Checkbox.displayName = 'Checkbox'
 
 export { Checkbox }

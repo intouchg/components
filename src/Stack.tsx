@@ -1,13 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box } from './index'
+import { grid } from 'styled-system'
+import { styleFunctions } from './core'
+import type { StyleProps } from './core'
+import type { GridProps } from 'styled-system'
 
-const Stack = styled(Box)``
-
-Stack.defaultProps = {
-	display: 'flex',
-	flexDirection: 'column',
-}
+const Stack = styled.div<
+	& StyleProps
+	& GridProps
+>`
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	${styleFunctions}
+	${grid}
+`
 
 Stack.displayName = 'Stack'
 

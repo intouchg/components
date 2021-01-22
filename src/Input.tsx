@@ -13,24 +13,17 @@ const Input = styled.input.attrs((props) => ({
 	& FocusColorProps
 >`
 	box-sizing: border-box;
+	border: 0;
+	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
-    border: 0;
-	font-family: inherit;
 	${variantsFunction('inputs')}
 	${styleFunctions}
 	${hoverColorStyleFunction}
 	${focusColorStyleFunction}
 `
 
-Input.defaultProps = {
-	variant: defaultVariantName,
-	// color: 'input.color',
-	// backgroundColor: 'input.backgroundColor',
-	// fontFamily: 'input.fontFamily',
-	// fontSize: 'input.fontSize',
-	// fontWeight: 'input.fontWeight',
-}
+Input.defaultProps = { variant: defaultVariantName }
 
 Input.displayName = 'Input'
 

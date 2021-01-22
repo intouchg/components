@@ -13,14 +13,7 @@ const Text = styled.span<
 	${styleFunctions}
 `
 
-Text.defaultProps = {
-	variant: defaultVariantName,
-	// color: 'text.color',
-	// backgroundColor: 'text.backgroundColor',
-	// fontFamily: 'text.fontFamily',
-	// fontSize: 'text.fontSize',
-	// fontWeight: 'text.fontWeight',
-}
+Text.defaultProps = { variant: defaultVariantName }
 
 Text.displayName = 'Text'
 

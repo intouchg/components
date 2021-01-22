@@ -13,14 +13,7 @@ const Heading = styled.h3<
 	${styleFunctions}
 `
 
-Heading.defaultProps = {
-	variant: defaultVariantName,
-	// color: 'heading.color',
-	// backgroundColor: 'heading.backgroundColor',
-	// fontFamily: 'heading.fontFamily',
-	// fontSize: 'heading.fontSize',
-	// fontWeight: 'heading.fontWeight',
-}
+Heading.defaultProps = { variant: defaultVariantName }
 
 Heading.displayName = 'Heading'
 
