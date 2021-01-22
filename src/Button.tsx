@@ -56,6 +56,10 @@ const InvisibleButton = styled(Button)`
 	}
 `
 
+InvisibleButton.defaultProps = {
+	variant: undefined,
+}
+
 InvisibleButton.displayName = 'InvisibleButton'
 
 export { Button, InvisibleButton }
