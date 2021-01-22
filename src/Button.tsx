@@ -45,4 +45,17 @@ Button.defaultProps = {
 
 Button.displayName = 'Button'
 
-export { Button }
+
+const InvisibleButton = styled(Button)`
+	background-color: transparent;
+	border: 0;
+	color: unset;
+	
+	&:active {
+		color: unset;
+	}
+`
+
+InvisibleButton.displayName = 'InvisibleButton'
+
+export { Button, InvisibleButton }
