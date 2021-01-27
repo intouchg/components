@@ -68,6 +68,22 @@ export type StyleProps =
 	& TextTransformProps
 	& TextDecorationProps
 
+export const svgColorStyleFunction = (props: any) => system({
+	fill: {
+		property: 'fill',
+		scale: 'colors',
+	},
+	stroke: {
+		property: 'stroke',
+		scale: 'colors',
+	},
+})
+
+export type SvgColorProps = {
+    fill?: string
+    stroke?: string
+}
+
 export const hoverColorStyleFunction = (props: any) => css`
 	&:hover {
 		${system({

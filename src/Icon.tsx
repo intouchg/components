@@ -1,24 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 import { defaultVariantName } from '@i/theme'
-import { system } from 'styled-system'
-import { styleFunctions, variantsFunction } from './core'
-import type { StyleProps, VariantProps } from './core'
+import { styleFunctions, variantsFunction, svgColorStyleFunction } from './core'
+import type { StyleProps, VariantProps, SvgColorProps } from './core'
 
 const Icon = styled.svg<
 	& StyleProps
+	& SvgColorProps
 	& VariantProps
-	& { fill?: string }
 >`
 	box-sizing: border-box;
 	${variantsFunction('icons')}
 	${styleFunctions}
-	${system({
-		fill: {
-			property: 'fill',
-			scale: 'colors',
-		},
-	})}
+	${svgColorStyleFunction}
 `
 
 Icon.defaultProps = { variant: defaultVariantName }

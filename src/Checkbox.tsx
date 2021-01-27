@@ -1,10 +1,10 @@
 import React, { forwardRef } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { defaultVariantName } from '@i/theme'
-import { styleFunctions, variantsFunction } from './core'
-import type { StyleProps, VariantProps } from './core'
+import { styleFunctions, variantsFunction, svgColorStyleFunction } from './core'
+import type { StyleProps, VariantProps, SvgColorProps } from './core'
 
-export const checkboxStyles = `
+export const checkboxStyles = css<SvgColorProps>`
     box-sizing: border-box;
     position: relative;
     display: inline-flex;
@@ -27,6 +27,7 @@ export const checkboxStyles = `
 
     span svg {
         position: absolute;
+        ${svgColorStyleFunction}
     }
 
     input:checked + span {
@@ -38,6 +39,7 @@ export const checkboxStyles = `
 const CheckboxContainer = styled.span<
     & StyleProps
     & VariantProps
+    & SvgColorProps
 >`
     ${checkboxStyles}
     ${variantsFunction('checkboxes')}
