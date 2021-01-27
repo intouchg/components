@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
-import { defaultVariantName } from '@i/theme'
+import { defaultVariantName, componentVariantsPropertyMap } from '@i/theme'
 import { checkboxStyles } from './Checkbox'
 import { styleFunctions, variantsFunction } from './core'
 import type { StyleProps, VariantProps } from './core'
@@ -11,7 +11,7 @@ const RadioContainer = styled.span<
 >`
     border-radius: 9999px;
     ${checkboxStyles}
-    ${variantsFunction('radios')}
+    ${variantsFunction(componentVariantsPropertyMap.radio)}
     ${styleFunctions}
 `
 

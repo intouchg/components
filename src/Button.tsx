@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { defaultVariantName } from '@i/theme'
+import { defaultVariantName, componentVariantsPropertyMap } from '@i/theme'
 import { styleFunctions, variantsFunction, hoverColorStyleFunction, activeColorStyleFunction } from './core'
 import type { StyleProps, VariantProps, HoverColorProps, ActiveColorProps } from './core'
 
@@ -19,7 +19,7 @@ const Button = styled.button<
 	line-height: inherit;
 	text-decoration: none;
 	cursor: pointer;
-	${variantsFunction('buttons')}
+	${variantsFunction(componentVariantsPropertyMap.button)}
 	${styleFunctions}
 	${hoverColorStyleFunction}
 	${activeColorStyleFunction}

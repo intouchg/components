@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
-import { defaultVariantName } from '@i/theme'
+import { defaultVariantName, componentVariantsPropertyMap } from '@i/theme'
 import { styleFunctions, variantsFunction, svgColorStyleFunction } from './core'
 import type { StyleProps, VariantProps, SvgColorProps } from './core'
 
@@ -42,7 +42,7 @@ const CheckboxContainer = styled.span<
     & SvgColorProps
 >`
     ${checkboxStyles}
-    ${variantsFunction('checkboxes')}
+    ${variantsFunction(componentVariantsPropertyMap.checkbox)}
     ${styleFunctions}
 `
 

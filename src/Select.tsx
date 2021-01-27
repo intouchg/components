@@ -2,7 +2,7 @@ import React from 'react'
 import { forwardRef } from 'react'
 import styled from 'styled-components'
 import { space, color } from 'styled-system'
-import { defaultVariantName } from '@i/theme'
+import { defaultVariantName, componentVariantsPropertyMap } from '@i/theme'
 import { styleFunctions, variantsFunction, svgColorStyleFunction } from './core'
 import type { StyleProps, VariantProps, SvgColorProps } from './core'
 
@@ -14,8 +14,8 @@ const SelectContainer = styled.span<
     box-sizing: border-box;
     position: relative;
     display: block;
+    ${variantsFunction(componentVariantsPropertyMap.select)}
     ${styleFunctions}
-    ${variantsFunction('selects')}
     padding: 0;
 
     select {
@@ -32,6 +32,7 @@ const SelectContainer = styled.span<
         outline: none;
         cursor: pointer;
         ${space}
+        margin: 0;
     }
 
     span {

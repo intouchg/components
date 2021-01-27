@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { defaultVariantName } from '@i/theme'
+import { defaultVariantName, componentVariantsPropertyMap } from '@i/theme'
 import { styleFunctions, variantsFunction } from './core'
 import type { StyleProps, VariantProps } from './core'
 
@@ -10,7 +10,7 @@ const Label = styled.label<
 >`
 	box-sizing: border-box;
 	cursor: pointer;
-	${variantsFunction('labels')}
+	${variantsFunction(componentVariantsPropertyMap.label)}
 	${styleFunctions}
 `
 
