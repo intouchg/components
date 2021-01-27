@@ -948,9 +948,9 @@
   integrity sha1-26/KlOizE+5tLhk0yi6lo9uiTaE=
 
 "@i/theme@latest":
-  version "0.0.34"
-  resolved "https://intazdoweb.intouchsol.com/IntouchDesignSystem/_packaging/IntouchDesignSystem/npm/registry/@i/theme/-/theme-0.0.34.tgz#84b62e0f6b8c240404a0f6034d25575777ff4330"
-  integrity sha1-hLYuD2uMJAQEoPYDTSVXV3f/QzA=
+  version "0.0.35"
+  resolved "https://intazdoweb.intouchsol.com/IntouchDesignSystem/_packaging/IntouchDesignSystem/npm/registry/@i/theme/-/theme-0.0.35.tgz#b4c48ac2d32a33a905a0a604e9dce510b030fb20"
+  integrity sha1-tMSKwtMqM6kFoKYE6dzlELAw+yA=
   dependencies:
     "@babel/runtime" "7.12.5"
     "@i/utility" latest
