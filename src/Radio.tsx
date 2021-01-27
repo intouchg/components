@@ -1,43 +1,23 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
-import { styleFunctions } from './core'
-import type { StyleProps } from './core'
+import { checkboxStyles } from './Checkbox'
+import { styleFunctions, variantsFunction } from './core'
+import type { StyleProps, VariantProps } from './core'
 
-const RadioContainer = styled.span<StyleProps>`
-    box-sizing: border-box;
-    position: relative;
-    display: inline-flex;
-    width: 1em;
-    height: 1em;
-    border-radius: 100%;
-    border-style: solid;
-    border-color: currentColor;
+const RadioContainer = styled.span<
+    & StyleProps
+    & VariantProps
+>`
+    border-radius: 9999px;
+    ${checkboxStyles}
+    ${variantsFunction('radios')}
     ${styleFunctions}
-
-    input {
-        position: absolute;
-        margin: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        cursor: pointer;
-    }
-
-    span {
-        opacity: 0;
-    }
-
-    span svg {
-        position: absolute;
-    }
-
-    input:checked + span {
-        opacity: 1;
-    }
 `
 
 const Radio = forwardRef((
     {
+        checked,
+        disabled,
         id,
         name,
         value,
@@ -45,21 +25,22 @@ const Radio = forwardRef((
         ...props
     }: React.ComponentProps<typeof RadioContainer> & {
         id?: string
+        disabled?: boolean
         name: string
         value?: string
         icon: React.ReactNode
     },
-    ref,
+    ref: React.ForwardedRef<HTMLInputElement | null>,
 ) => (
-    <RadioContainer
-        ref={ref}
-        {...props}
-    >
+    <RadioContainer {...props}>
 		<input
-			type="radio"
+            type="radio"
+            checked={checked}
+            disabled={disabled}
 			id={id}
 			name={name}
-			value={value}
+            value={value}
+            ref={ref}
 		/>
 		<span aria-hidden="true">
 			{icon}

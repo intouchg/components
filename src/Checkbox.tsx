@@ -1,79 +1,84 @@
-import React, { useRef } from 'react'
-import styled from 'styled-components'
-import { styleFunctions } from './core'
-import type { StyleProps } from './core'
+import React, { forwardRef } from 'react'
+import styled, { css } from 'styled-components'
+import { styleFunctions, variantsFunction } from './core'
+import type { StyleProps, VariantProps } from './core'
 
-const CheckboxContainer = styled.div<{ disabled?: boolean }>`
-    display: inline-block;
-    vertical-align: middle;
-    cursor: ${(props) => props.disabled ? 'default' : 'pointer'};
-`
-
-const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
-    border: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-`
-
-const BaseCheckbox = ({
-	id,
-	className,
-    checked,
-    disabled,
-	onClick = () => {},
-	children,
-}: {
-    id?: string
-    className?: string
-    checked: boolean
-    disabled?: boolean
-    onClick?: (checked: boolean) => void
-    children: React.ReactNode
-}) => {
-    const wasClicked = useRef(false)
-
-	const handleClick = () => {
-		wasClicked.current = true
-		onClick(!checked)
-	}
-
-	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		if (wasClicked.current) {
-			wasClicked.current = false
-			return
-		}
-
-		onClick(event.target.checked)
-	}
-
-    return (
-        <CheckboxContainer
-            className={className}
-            disabled={disabled}
-            onClick={!disabled ? handleClick : undefined}
-        >
-            <HiddenCheckbox
-                id={id}
-                checked={checked}
-                disabled={disabled}
-                onChange={handleChange}
-            />
-            {children}
-        </CheckboxContainer>
-    )
-}
-
-const Checkbox = styled(BaseCheckbox)<StyleProps>`
+export const checkboxStyles = css`
     box-sizing: border-box;
+    position: relative;
+    display: inline-flex;
+    width: 1em;
+    height: 1em;
+    border-style: solid;
+
+    input {
+        position: absolute;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    span {
+        opacity: 0;
+    }
+
+    span svg {
+        position: absolute;
+    }
+
+    input:checked + span {
+        opacity: 1;
+    }
+`
+
+
+const CheckboxContainer = styled.span<
+    & StyleProps
+    & VariantProps
+>`
+    ${checkboxStyles}
+    ${variantsFunction('checkboxes')}
     ${styleFunctions}
 `
+
+const Checkbox = forwardRef((
+	{
+        checked,
+        disabled,
+        id,
+        name,
+        value,
+        onChange,
+        icon,
+        ...props
+    }: React.ComponentProps<typeof CheckboxContainer> & {
+        checked: boolean
+        disabled?: boolean
+        id?: string
+        name: string
+        value?: string
+        onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+        icon: React.ReactNode
+    },
+	ref: React.ForwardedRef<HTMLInputElement | null>,
+) => (
+	<CheckboxContainer {...props}>
+		<input
+			type="checkbox"
+			checked={checked}
+			id={id}
+			name={name}
+			value={value}
+			ref={ref}
+			onChange={onChange}
+		/>
+		<span aria-hidden="true">
+			{icon}
+		</span>
+	</CheckboxContainer>
+))
 
 Checkbox.displayName = 'Checkbox'
 
