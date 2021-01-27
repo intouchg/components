@@ -1,9 +1,10 @@
 import React, { forwardRef } from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
+import { defaultVariantName } from '@i/theme'
 import { styleFunctions, variantsFunction } from './core'
 import type { StyleProps, VariantProps } from './core'
 
-export const checkboxStyles = css`
+export const checkboxStyles = `
     box-sizing: border-box;
     position: relative;
     display: inline-flex;
@@ -79,6 +80,8 @@ const Checkbox = forwardRef((
 		</span>
 	</CheckboxContainer>
 ))
+
+Checkbox.defaultProps = { variant: defaultVariantName }
 
 Checkbox.displayName = 'Checkbox'
 

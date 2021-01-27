@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
+import { defaultVariantName } from '@i/theme'
 import { checkboxStyles } from './Checkbox'
 import { styleFunctions, variantsFunction } from './core'
 import type { StyleProps, VariantProps } from './core'
@@ -47,6 +48,8 @@ const Radio = forwardRef((
 		</span>
 	</RadioContainer>
 ))
+
+Radio.defaultProps = { variant: defaultVariantName }
 
 Radio.displayName = 'Radio'
 
