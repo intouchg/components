@@ -13,7 +13,8 @@ const Input = styled.input.attrs((props) => ({
 	& FocusColorProps
 >`
 	box-sizing: border-box;
-	border: 0;
+	border-style: none;
+	padding: 0;
 	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;

@@ -12,7 +12,8 @@ const Button = styled.button<
 >`
 	box-sizing: border-box;
 	background-color: transparent;
-	border: none;
+	border-style: none;
+	padding: 0;
 	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
