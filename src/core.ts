@@ -5,6 +5,7 @@ import { css } from 'styled-components'
 import { props as defaultThemePropStrings } from '@styled-system/should-forward-prop'
 import { customThemeProps, defaultVariantName, componentVariantsPropertyMap } from '@i/theme'
 import type { LayoutProps, FlexboxProps, PositionProps, SpaceProps, ColorProps, BackgroundProps, BorderProps, ShadowProps, TypographyProps } from 'styled-system'
+import type { themeSpec, StyleProperty } from '@i/theme'
 
 export const callAll = (...fns: Function[]) => (...args: any[]) => fns.forEach(fn => fn && fn(...args))
 
@@ -18,6 +19,22 @@ const themePropStrings = defaultThemePropStrings.concat(customThemePropStrings)
 
 export const createShouldForwardProp = (propStringsToPass: string[]) =>
     memoize((prop) => !themePropStrings.includes(prop) && (isHTMLProp(prop) || propStringsToPass.includes(prop))) as any
+
+export const filterThemeProps = <T extends { [key in StyleProperty]: any }>(props: T, propNames: Readonly<string[]>) => {
+	const filteredProps = {} as T
+	const keys = Object.keys(props) as StyleProperty[]
+	const keysLength = keys.length
+
+	for (let i = 0; i < keysLength; i++) {
+		const key = keys[i]
+
+		if (propNames.includes(key)) {
+			filteredProps[key] = props[key]
+		}
+	}
+
+	return filteredProps
+}
 
 export const variantsFunction = (themePropName: typeof componentVariantsPropertyMap[keyof typeof componentVariantsPropertyMap]) => variant({ scale: themePropName, variants: { [defaultVariantName]: {} } })
 
