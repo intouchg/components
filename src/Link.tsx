@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { defaultVariantName, componentVariantsPropertyMap } from '@i/theme'
-import { styleFunctions, variantsFunction, hoverColorStyleFunction, activeColorStyleFunction, visitedColorStyleFunction } from './core'
+import { styleFunctions, variantsFunction, hoverColor, activeColor, visitedColor } from './core'
 import type { StyleProps, VariantProps, HoverColorProps, ActiveColorProps, VisitedColorProps } from './core'
 
 const Link = styled.a<
@@ -15,12 +15,14 @@ const Link = styled.a<
 	cursor: pointer;
 	${variantsFunction(componentVariantsPropertyMap.link)}
 	${styleFunctions}
-	${hoverColorStyleFunction}
-	${activeColorStyleFunction}
-	${visitedColorStyleFunction}
+	${hoverColor}
+	${activeColor}
+	${visitedColor}
 `
 
 Link.defaultProps = { variant: defaultVariantName }
+
+;(Link as any).themeComponent = 'link'
 
 Link.displayName = 'Link'
 

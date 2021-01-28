@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { defaultVariantName, componentVariantsPropertyMap } from '@i/theme'
-import { styleFunctions, variantsFunction, hoverColorStyleFunction, focusColorStyleFunction } from './core'
+import { styleFunctions, variantsFunction, hoverColor, focusColor } from './core'
 import type { StyleProps, VariantProps, HoverColorProps, FocusColorProps } from './core'
 
 const Input = styled.input.attrs((props) => ({
@@ -20,11 +20,13 @@ const Input = styled.input.attrs((props) => ({
 	line-height: inherit;
 	${variantsFunction(componentVariantsPropertyMap.input)}
 	${styleFunctions}
-	${hoverColorStyleFunction}
-	${focusColorStyleFunction}
+	${hoverColor}
+	${focusColor}
 `
 
 Input.defaultProps = { variant: defaultVariantName }
+
+;(Input as any).themeComponent = 'input'
 
 Input.displayName = 'Input'
 

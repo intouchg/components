@@ -5,6 +5,7 @@ declare namespace JSX {
 }
 
 export * from './core'
+export * from './styles'
 
 export * from './Accordion'
 export * from './AccordionCollapse'

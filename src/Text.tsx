@@ -15,6 +15,8 @@ const Text = styled.span<
 
 Text.defaultProps = { variant: defaultVariantName }
 
+;(Text as any).themeComponent = 'text'
+
 Text.displayName = 'Text'
 
 export { Text }

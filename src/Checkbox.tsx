@@ -1,16 +1,19 @@
 import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 import { defaultVariantName, componentVariantsPropertyMap } from '@i/theme'
-import { styleFunctions, variantsFunction, svgColorStyleFunction } from './core'
+import { styleFunctions, variantsFunction, svgColor } from './core'
+import { focusWithinOutlineStyles } from './styles'
 import type { StyleProps, VariantProps, SvgColorProps } from './core'
 
-export const checkboxStyles = css<SvgColorProps>`
+export const checkboxSharedStyles = css<SvgColorProps>`
     box-sizing: border-box;
     position: relative;
     display: inline-flex;
     width: 1em;
     height: 1em;
     border-style: solid;
+
+    ${focusWithinOutlineStyles}
 
     input {
         position: absolute;
@@ -27,7 +30,7 @@ export const checkboxStyles = css<SvgColorProps>`
 
     span svg {
         position: absolute;
-        ${svgColorStyleFunction}
+        ${svgColor}
     }
 
     input:checked + span {
@@ -41,7 +44,7 @@ const CheckboxContainer = styled.span<
     & VariantProps
     & SvgColorProps
 >`
-    ${checkboxStyles}
+    ${checkboxSharedStyles}
     ${variantsFunction(componentVariantsPropertyMap.checkbox)}
     ${styleFunctions}
 `
@@ -84,6 +87,8 @@ const Checkbox = forwardRef((
 ))
 
 Checkbox.defaultProps = { variant: defaultVariantName }
+
+;(Checkbox as any).themeComponent = 'checkbox'
 
 Checkbox.displayName = 'Checkbox'
 

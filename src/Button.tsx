@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { defaultVariantName, componentVariantsPropertyMap } from '@i/theme'
-import { styleFunctions, variantsFunction, hoverColorStyleFunction, activeColorStyleFunction } from './core'
+import { styleFunctions, variantsFunction, hoverColor, activeColor } from './core'
 import type { StyleProps, VariantProps, HoverColorProps, ActiveColorProps } from './core'
 
 const Button = styled.button<
@@ -21,11 +21,13 @@ const Button = styled.button<
 	cursor: pointer;
 	${variantsFunction(componentVariantsPropertyMap.button)}
 	${styleFunctions}
-	${hoverColorStyleFunction}
-	${activeColorStyleFunction}
+	${hoverColor}
+	${activeColor}
 `
 
 Button.defaultProps = { variant: defaultVariantName }
+
+;(Button as any).themeComponent = 'button'
 
 Button.displayName = 'Button'
 

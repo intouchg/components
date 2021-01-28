@@ -16,6 +16,8 @@ const Label = styled.label<
 
 Label.defaultProps = { variant: defaultVariantName }
 
+;(Label as any).themeComponent = 'label'
+
 Label.displayName = 'Label'
 
 export { Label }

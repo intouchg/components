@@ -15,6 +15,8 @@ const Heading = styled.h3<
 
 Heading.defaultProps = { variant: defaultVariantName }
 
+;(Heading as any).themeComponent = 'heading'
+
 Heading.displayName = 'Heading'
 
 export { Heading }
