@@ -8,11 +8,6 @@ import type { StyleProps, VariantProps } from './core'
 const RadioContainer = styled.span<StyleProps & VariantProps>`
     ${checkboxSharedStyles}
 
-    input:disabled + span {
-        background-color: #f8f8f8;
-        border-color: #d1d1d1;
-    }
-
     input:checked:disabled + span {
         color: #d1d1d1;
     }

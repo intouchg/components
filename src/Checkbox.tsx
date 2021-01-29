@@ -27,6 +27,10 @@ export const checkboxSharedStyles = `
         cursor: pointer;
     }
 
+    input:disabled {
+        cursor: auto;
+    }
+
     span {
         box-sizing: border-box;
         display: flex;
@@ -52,6 +56,11 @@ export const checkboxSharedStyles = `
         opacity: 1;
     }
 
+    input:disabled + span {
+        background-color: #f8f8f8;
+        border-color: #d1d1d1;
+    }
+
     input:focus-visible + span {
         outline: 2px auto #005FD7;
         outline: 2px auto -webkit-focus-ring-color;
@@ -67,12 +76,9 @@ export const borderAndBackgroundProps = [
 const CheckboxContainer = styled.span<StyleProps & VariantProps>`
     ${checkboxSharedStyles}
 
-    input:disabled + span {
+    input:checked:disabled + span {
         background-color: #d1d1d1;
         border-color: #d1d1d1;
-    }
-
-    input:checked:disabled + span {
         color: #efefef;
     }
 
