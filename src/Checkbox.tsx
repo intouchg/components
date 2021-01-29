@@ -52,7 +52,10 @@ export const checkboxSharedStyles = css`
 
 
 const CheckboxContainer = styled.span<StyleProps & VariantProps>`
-    border-radius: 2px;
+    span {
+        border-radius: 2px;
+    }
+
     ${checkboxSharedStyles}
     ${variantsFunction('checkboxes')}
     ${styleFunctions}

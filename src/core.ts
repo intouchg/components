@@ -2,9 +2,9 @@ import { system, variant, compose, space, layout, flexbox, grid, position, color
 import isHTMLProp from '@emotion/is-prop-valid'
 import memoize from '@emotion/memoize'
 import { props as defaultThemePropStrings } from '@styled-system/should-forward-prop'
-import { customThemeProps, defaultVariantName, componentVariantsPropertyMap } from '@i/theme'
+import { customThemeProps, defaultVariantName } from '@i/theme'
 import type { LayoutProps, FlexboxProps, GridProps, PositionProps, SpaceProps, ColorProps, BackgroundProps, BorderProps, ShadowProps, TypographyProps } from 'styled-system'
-import type { StyleProperty } from '@i/theme'
+import type { StyleProperty, componentVariantsPropertyMap } from '@i/theme'
 
 
 
