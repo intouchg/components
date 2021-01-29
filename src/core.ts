@@ -29,12 +29,8 @@ export const createShouldForwardProp = (propStringsToPass: string[]) =>
 
 export const filterThemeProps = <T extends { [key in StyleProperty]: any }>(props: T, propNames: Readonly<string[]>) => {
     const filteredProps = {} as T
-    const keys = Object.keys(props) as StyleProperty[]
-    const keysLength = keys.length
 
-    for (let i = 0; i < keysLength; i++) {
-        const key = keys[i]
-
+    for (const key in props) {
         if (propNames.includes(key)) {
             filteredProps[key] = props[key]
         }
@@ -48,8 +44,14 @@ export const filterThemeProps = <T extends { [key in StyleProperty]: any }>(prop
 export const customStyleFunction = (props: any) => system({
 
     // SVG
-    fill: { scale: 'colors' },
-	stroke: { scale: 'colors' },
+    fill: {
+        property: 'fill',
+        scale: 'colors',
+    },
+	stroke: {
+        property: 'stroke',
+        scale: 'colors',
+    },
     strokeWidth: true,
 
     // Text

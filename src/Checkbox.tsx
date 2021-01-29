@@ -1,8 +1,7 @@
 import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
-import { defaultVariantName, componentVariantsPropertyMap } from '@i/theme'
+import { defaultVariantName } from '@i/theme'
 import { styleFunctions, variantsFunction, sx } from './core'
-import { focusWithinOutlineStyles } from './styles'
 import type { StyleProps, VariantProps } from './core'
 
 export const checkboxSharedStyles = css`
@@ -12,8 +11,6 @@ export const checkboxSharedStyles = css`
     width: 1em;
     height: 1em;
     border-style: solid;
-
-    ${focusWithinOutlineStyles}
 
     input {
         position: absolute;
@@ -31,23 +28,31 @@ export const checkboxSharedStyles = css`
         justify-content: center;
         width: 100%;
         height: 100%;
-        opacity: 0;
         pointer-events: none;
     }
 
     span svg {
         position: absolute;
+        opacity: 0;
     }
 
-    input:checked + span {
+    input:checked + span svg {
         opacity: 1;
+    }
+
+    input:focus + span {
+        outline-width: 2px;
+        outline-style: solid;
+        outline-color: #005FD7;
+        outline-color: -webkit-focus-ring-color;
+        outline-offset: 2px;
     }
 `
 
 
 const CheckboxContainer = styled.span<StyleProps & VariantProps>`
     ${checkboxSharedStyles}
-    ${variantsFunction(componentVariantsPropertyMap.checkbox)}
+    ${variantsFunction('checkboxes')}
     ${styleFunctions}
     ${sx}
 `

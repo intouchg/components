@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
-import { defaultVariantName, componentVariantsPropertyMap, themePaddingProps } from '@i/theme'
+import { defaultVariantName, themePaddingProps } from '@i/theme'
 import { styleFunctions, variantsFunction, filterThemeProps, sx } from './core'
 import type { StyleProps, VariantProps } from './core'
 
@@ -8,7 +8,7 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
     ${(props) => {
         const styleProps = styleFunctions(props)
         const paddingStyleProps = filterThemeProps(styleProps, themePaddingProps)
-        const variantProps = variantsFunction(componentVariantsPropertyMap.select)(props)
+        const variantProps = variantsFunction('selects')(props)
         const paddingVariantProps = filterThemeProps(variantProps, themePaddingProps)
 
         return css`

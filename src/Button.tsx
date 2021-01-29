@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { defaultVariantName, componentVariantsPropertyMap } from '@i/theme'
+import { defaultVariantName } from '@i/theme'
 import { styleFunctions, variantsFunction, sx } from './core'
 import type { StyleProps, VariantProps } from './core'
 
@@ -14,7 +14,7 @@ const Button = styled.button<StyleProps & VariantProps>`
 	line-height: inherit;
 	text-decoration: none;
 	cursor: pointer;
-	${variantsFunction(componentVariantsPropertyMap.button)}
+	${variantsFunction('buttons')}
 	${styleFunctions}
 	${sx}
 `

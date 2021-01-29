@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { defaultVariantName, componentVariantsPropertyMap } from '@i/theme'
+import { defaultVariantName } from '@i/theme'
 import { styleFunctions, variantsFunction, sx } from './core'
 import type { StyleProps, VariantProps } from './core'
 
@@ -13,7 +13,7 @@ const Input = styled.input.attrs((props) => ({
 	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
-	${variantsFunction(componentVariantsPropertyMap.input)}
+	${variantsFunction('inputs')}
 	${styleFunctions}
 	${sx}
 `

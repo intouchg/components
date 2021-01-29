@@ -21,7 +21,7 @@ const Accordion = ({
 	const [ activeIds, setActiveIds ] = useState(defaultActiveId ? [ defaultActiveId ] : [])
 
 	useEffect(() => {
-		// Handle defaultActiveId changing after initial render
+		// TO DO: Handle defaultActiveId changing after initial render
 		if (activeIds.join('') === [ previousDefaultActiveId.current ].join('')) {
 			previousDefaultActiveId.current = defaultActiveId
 			setActiveIds(defaultActiveId ? [ defaultActiveId ] : [])
