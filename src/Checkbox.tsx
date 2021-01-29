@@ -39,6 +39,7 @@ export const checkboxSharedStyles = `
     }
 
     span svg {
+        width: 100%;
         opacity: 0;
     }
 
