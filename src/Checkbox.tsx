@@ -8,8 +8,6 @@ export const checkboxSharedStyles = css`
     box-sizing: border-box;
     position: relative;
     display: inline-flex;
-    width: 1em;
-    height: 1em;
 
     input {
         position: absolute;
@@ -22,12 +20,11 @@ export const checkboxSharedStyles = css`
 
     span {
         box-sizing: border-box;
-        position: absolute;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100%;
-        height: 100%;
+        width: 1em;
+        height: 1em;
         border-style: solid;
         pointer-events: none;
     }
@@ -42,11 +39,9 @@ export const checkboxSharedStyles = css`
     }
 
     input:focus-visible + span {
-        outline-width: 2px;
-        outline-style: solid;
-        outline-color: #005FD7;
-        outline-color: -webkit-focus-ring-color;
-        outline-offset: 2px;
+        outline: 2px auto #005FD7;
+        outline: 2px auto -webkit-focus-ring-color;
+        outline-offset: 3px;
     }
 `
 
@@ -54,12 +49,12 @@ export const checkboxSharedStyles = css`
 const CheckboxContainer = styled.span<StyleProps & VariantProps>`
     span {
         border-radius: 2px;
-    }
 
-    ${checkboxSharedStyles}
-    ${variantsFunction('checkboxes')}
-    ${styleFunctions}
-    ${sx}
+        ${checkboxSharedStyles}
+        ${variantsFunction('checkboxes')}
+        ${styleFunctions}
+        ${sx}
+    }
 `
 
 const Checkbox = forwardRef((

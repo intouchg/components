@@ -16,9 +16,6 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
             position: relative;
             display: block;
             background-color: #ffffff;
-            ${variantProps}
-            ${styleProps}
-            padding: 0;
 
             select {
                 appearance: none;
@@ -38,7 +35,7 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
                 margin: 0;
             }
 
-            span {
+            select + span {
                 position: absolute;
                 right: 0;
                 width: 1em;
@@ -54,7 +51,15 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
                 padding-left: 0.5em;
             }
 
+            select:focus-within + span + span {
+                outline: 2px auto #005FD7;
+                outline: 2px auto -webkit-focus-ring-color;
+            }
+
+            ${variantProps}
+            ${styleProps}
             ${sx}
+            padding: 0;
         `
     }}
 `
@@ -84,6 +89,7 @@ const Select = forwardRef((
         <span aria-hidden="true">
             {icon}
         </span>
+        <span aria-hidden="true" />
     </SelectContainer>
 ))
 

@@ -8,12 +8,12 @@ import type { StyleProps, VariantProps } from './core'
 const RadioContainer = styled.span<StyleProps & VariantProps>`
     span {
         border-radius: 9999px;
-    }
 
-    ${checkboxSharedStyles}
-    ${variantsFunction('radios')}
-    ${styleFunctions}
-    ${sx}
+        ${checkboxSharedStyles}
+        ${variantsFunction('radios')}
+        ${styleFunctions}
+        ${sx}
+    }
 `
 
 const Radio = forwardRef((
