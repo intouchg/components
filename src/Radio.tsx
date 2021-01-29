@@ -10,6 +10,7 @@ const RadioContainer = styled.span<StyleProps & VariantProps>`
 
     input:checked:disabled + span {
         color: #d1d1d1;
+        fill: #d1d1d1;
     }
 
     ${(props) => {
@@ -35,6 +36,16 @@ const RadioContainer = styled.span<StyleProps & VariantProps>`
         `
     }}
 `
+
+const RadioIcon = () => (
+    <svg viewBox="0 0 5 5">
+        <circle
+            cx="2.5"
+            cy="2.5"
+            r="1.75"
+        />
+    </svg>
+)
 
 const Radio = forwardRef((
     {
@@ -68,7 +79,7 @@ const Radio = forwardRef((
             onChange={onChange}
         />
         <span aria-hidden="true">
-            {icon}
+            {icon || (<RadioIcon />)}
         </span>
     </RadioContainer>
 ))

@@ -41,7 +41,7 @@ export const filterThemeProps = <T extends { [key in StyleProperty]: any }>(prop
 
 
 
-export const customStyleFunction = (props: any) => system({
+export const customStyleFunction = system({
 
     // SVG
     fill: {

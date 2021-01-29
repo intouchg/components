@@ -80,6 +80,7 @@ const CheckboxContainer = styled.span<StyleProps & VariantProps>`
         background-color: #d1d1d1;
         border-color: #d1d1d1;
         color: #efefef;
+        fill: #efefef;
     }
 
     ${(props) => {
@@ -101,10 +102,20 @@ const CheckboxContainer = styled.span<StyleProps & VariantProps>`
                 ${filteredVariantProps}
             }
 
+            span svg {
+                padding: 0.05em;
+            }
+
             ${sx}
         `
     }}
 `
+
+const CheckboxIcon = () => (
+	<svg viewBox="0 0 24 24">
+		<path d="M20.3 2l-11.3 11.6-5.3-5-3.7 3.7 9 8.7 15-15.3z" />
+	</svg>
+)
 
 const Checkbox = forwardRef((
     {
@@ -139,7 +150,7 @@ const Checkbox = forwardRef((
             onChange={onChange}
         />
         <span aria-hidden="true">
-            {icon || '✓'}
+            {icon || (<CheckboxIcon />)}
         </span>
     </CheckboxContainer>
 ))
