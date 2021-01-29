@@ -35,12 +35,17 @@ export const checkboxSharedStyles = `
         border-width: 1px;
         border-style: solid;
         border-color: #767676;
+        color: rgba(0, 0, 0, 0);
         pointer-events: none;
     }
 
     span svg {
         width: 100%;
         opacity: 0;
+    }
+
+    input:checked + span {
+        color: inherit;
     }
 
     input:checked + span svg {
@@ -61,6 +66,12 @@ export const borderAndBackgroundProps = [
 
 const CheckboxContainer = styled.span<StyleProps & VariantProps>`
     ${checkboxSharedStyles}
+
+    input:disabled + span {
+        color: #efefef;
+        background-color: #d1d1d1;
+        border-color: #d1d1d1;
+    }
 
     ${(props) => {
         const styleProps = styleFunctions(props)
@@ -87,7 +98,7 @@ const CheckboxContainer = styled.span<StyleProps & VariantProps>`
 `
 
 const Checkbox = forwardRef((
-	{
+    {
         checked,
         disabled,
         id,
@@ -105,22 +116,23 @@ const Checkbox = forwardRef((
         onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
         icon: React.ReactNode
     },
-	ref: React.ForwardedRef<HTMLInputElement | null>,
+    ref: React.ForwardedRef<HTMLInputElement | null>,
 ) => (
-	<CheckboxContainer {...props}>
-		<input
-			type="checkbox"
-			checked={checked}
-			id={id}
-			name={name}
-			value={value}
-			ref={ref}
-			onChange={onChange}
-		/>
-		<span aria-hidden="true">
-			{icon}
-		</span>
-	</CheckboxContainer>
+    <CheckboxContainer {...props}>
+        <input
+            type="checkbox"
+            checked={checked}
+            disabled={disabled}
+            id={id}
+            name={name}
+            value={value}
+            ref={ref}
+            onChange={onChange}
+        />
+        <span aria-hidden="true">
+            {icon || '✓'}
+        </span>
+    </CheckboxContainer>
 ))
 
 Checkbox.defaultProps = { variant: defaultVariantName }

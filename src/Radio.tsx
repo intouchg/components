@@ -8,6 +8,12 @@ import type { StyleProps, VariantProps } from './core'
 const RadioContainer = styled.span<StyleProps & VariantProps>`
     ${checkboxSharedStyles}
 
+    input:disabled + span {
+        color: #d1d1d1;
+        background-color: #f8f8f8;
+        border-color: #d1d1d1;
+    }
+
     ${(props) => {
         const styleProps = styleFunctions(props)
         const variantProps = variantsFunction('radios')(props)
@@ -39,6 +45,7 @@ const Radio = forwardRef((
         id,
         name,
         value,
+        onChange,
         icon,
         ...props
     }: React.ComponentProps<typeof RadioContainer> & {
@@ -46,24 +53,26 @@ const Radio = forwardRef((
         disabled?: boolean
         name: string
         value?: string
+        onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
         icon: React.ReactNode
     },
     ref: React.ForwardedRef<HTMLInputElement | null>,
 ) => (
     <RadioContainer {...props}>
-		<input
+        <input
             type="radio"
             checked={checked}
             disabled={disabled}
-			id={id}
-			name={name}
+            id={id}
+            name={name}
             value={value}
             ref={ref}
-		/>
-		<span aria-hidden="true">
-			{icon}
-		</span>
-	</RadioContainer>
+            onChange={onChange}
+        />
+        <span aria-hidden="true">
+            {icon}
+        </span>
+    </RadioContainer>
 ))
 
 Radio.defaultProps = { variant: defaultVariantName }
