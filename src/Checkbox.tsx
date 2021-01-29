@@ -11,11 +11,18 @@ export const checkboxSharedStyles = `
     width: 1em;
     height: 1em;
 
-    input {
+    input, span {
         position: absolute;
-        margin: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
         width: 100%;
         height: 100%;
+        margin: 0;
+    }
+
+    input {
         opacity: 0;
         cursor: pointer;
     }
@@ -25,8 +32,6 @@ export const checkboxSharedStyles = `
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100%;
-        height: 100%;
         border-width: 1px;
         border-style: solid;
         border-color: #767676;
@@ -34,7 +39,6 @@ export const checkboxSharedStyles = `
     }
 
     span svg {
-        position: absolute;
         opacity: 0;
     }
 
