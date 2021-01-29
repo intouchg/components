@@ -8,6 +8,8 @@ export const checkboxSharedStyles = `
     box-sizing: border-box;
     position: relative;
     display: inline-flex;
+    width: 1em;
+    height: 1em;
 
     input {
         position: absolute;
