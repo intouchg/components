@@ -10,7 +10,6 @@ export const checkboxSharedStyles = css`
     display: inline-flex;
     width: 1em;
     height: 1em;
-    border-style: solid;
 
     input {
         position: absolute;
@@ -22,12 +21,14 @@ export const checkboxSharedStyles = css`
     }
 
     span {
+        box-sizing: border-box;
         position: absolute;
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
         height: 100%;
+        border-style: solid;
         pointer-events: none;
     }
 
@@ -51,6 +52,7 @@ export const checkboxSharedStyles = css`
 
 
 const CheckboxContainer = styled.span<StyleProps & VariantProps>`
+    border-radius: 2px;
     ${checkboxSharedStyles}
     ${variantsFunction('checkboxes')}
     ${styleFunctions}
