@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
-import { defaultVariantName } from '@i/theme'
-import { styleFunctions, variantsFunction, sx } from './core'
+import { defaultVariantName, themeBorderProps } from '@i/theme'
+import { styleFunctions, variantsFunction, filterThemeProps, sx } from './core'
 import type { StyleProps, VariantProps } from './core'
 
 export const checkboxSharedStyles = `
@@ -23,8 +23,8 @@ export const checkboxSharedStyles = `
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 1em;
-        height: 1em;
+        width: 100%;
+        height: 100%;
         border-width: 1px;
         border-style: solid;
         border-color: #767676;
@@ -51,13 +51,26 @@ export const checkboxSharedStyles = `
 const CheckboxContainer = styled.span<StyleProps & VariantProps>`
     ${checkboxSharedStyles}
 
-    span {
-        border-radius: 2px;
+    ${(props) => {
+        const styleProps = styleFunctions(props)
+        const variantProps = variantsFunction('checkboxes')(props)
+        const borderStyleProps = filterThemeProps(styleProps, themeBorderProps)
+        const borderVariantProps = filterThemeProps(variantProps, themeBorderProps)
 
-        ${variantsFunction('checkboxes')}
-        ${styleFunctions}
-        ${sx}
-    }
+        return css`
+            ${variantProps}
+            ${styleProps}
+            border-style: none;
+
+            span {
+                border-radius: 2px;
+                ${borderStyleProps}
+                ${borderVariantProps}
+            }
+
+            ${sx}
+        `
+    }}
 `
 
 const Checkbox = forwardRef((

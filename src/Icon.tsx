@@ -6,6 +6,9 @@ import type { StyleProps, VariantProps } from './core'
 
 const Icon = styled.svg<StyleProps & VariantProps>`
 	box-sizing: border-box;
+	color: inherit;
+	fill: inherit;
+	stroke: inherit;
 	${variantsFunction('icons')}
 	${styleFunctions}
 	${sx}
