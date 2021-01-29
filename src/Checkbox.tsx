@@ -68,9 +68,12 @@ const CheckboxContainer = styled.span<StyleProps & VariantProps>`
     ${checkboxSharedStyles}
 
     input:disabled + span {
-        color: #efefef;
         background-color: #d1d1d1;
         border-color: #d1d1d1;
+    }
+
+    input:checked:disabled + span {
+        color: #efefef;
     }
 
     ${(props) => {

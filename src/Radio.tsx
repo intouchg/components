@@ -9,9 +9,12 @@ const RadioContainer = styled.span<StyleProps & VariantProps>`
     ${checkboxSharedStyles}
 
     input:disabled + span {
-        color: #d1d1d1;
         background-color: #f8f8f8;
         border-color: #d1d1d1;
+    }
+
+    input:checked:disabled + span {
+        color: #d1d1d1;
     }
 
     ${(props) => {
