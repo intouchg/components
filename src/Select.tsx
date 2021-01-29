@@ -51,7 +51,12 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
                 padding-left: 0.5em;
             }
 
-            select:focus-within + span + span {
+            select:focus-visible + span + span {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
                 outline: 2px auto #005FD7;
                 outline: 2px auto -webkit-focus-ring-color;
             }
