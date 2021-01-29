@@ -40,7 +40,7 @@ export const checkboxSharedStyles = css`
         opacity: 1;
     }
 
-    input:focus + span {
+    input:focus-visible + span {
         outline-width: 2px;
         outline-style: solid;
         outline-color: #005FD7;
