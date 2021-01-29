@@ -16,6 +16,7 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
             position: relative;
             display: block;
             background-color: #ffffff;
+            overflow: hidden;
 
             select {
                 appearance: none;
