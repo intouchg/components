@@ -1,20 +1,20 @@
 import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
-import { defaultVariantName, themePaddingProps, themeBorderProps } from '@i/theme'
+import { defaultVariantName, borderProps, paddingProps } from '@i/theme'
 import { styleFunctions, variantsFunction, filterThemeProps, sx } from './core'
 import type { StyleProps, VariantProps } from './core'
 
-const paddingAndBorderProps = [
-    ...themePaddingProps,
-    ...themeBorderProps,
+const borderAndPaddingProps = [
+    ...borderProps,
+    ...paddingProps,
 ]
 
 const SelectContainer = styled.span<StyleProps & VariantProps>`
     ${(props) => {
         const styleProps = styleFunctions(props)
         const variantProps = variantsFunction('selects')(props)
-        const filteredStyleProps = filterThemeProps(styleProps, paddingAndBorderProps)
-        const filteredVariantProps = filterThemeProps(variantProps, paddingAndBorderProps)
+        const filteredStyleProps = filterThemeProps(styleProps, borderAndPaddingProps)
+        const filteredVariantProps = filterThemeProps(variantProps, borderAndPaddingProps)
 
         return css`
             box-sizing: border-box;

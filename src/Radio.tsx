@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
-import { defaultVariantName, themeBorderProps } from '@i/theme'
-import { checkboxSharedStyles } from './Checkbox'
+import { defaultVariantName } from '@i/theme'
+import { checkboxSharedStyles, borderAndBackgroundProps } from './Checkbox'
 import { styleFunctions, variantsFunction, filterThemeProps, sx } from './core'
 import type { StyleProps, VariantProps } from './core'
 
@@ -11,18 +11,20 @@ const RadioContainer = styled.span<StyleProps & VariantProps>`
     ${(props) => {
         const styleProps = styleFunctions(props)
         const variantProps = variantsFunction('radios')(props)
-        const borderStyleProps = filterThemeProps(styleProps, themeBorderProps)
-        const borderVariantProps = filterThemeProps(variantProps, themeBorderProps)
+        const filteredStyleProps = filterThemeProps(styleProps, borderAndBackgroundProps)
+        const filteredVariantProps = filterThemeProps(variantProps, borderAndBackgroundProps)
 
         return css`
             ${variantProps}
             ${styleProps}
+            background: unset;
+            background-color: unset;
             border-style: none;
 
             span {
                 border-radius: 9999px;
-                ${borderStyleProps}
-                ${borderVariantProps}
+                ${filteredStyleProps}
+                ${filteredVariantProps}
             }
 
             ${sx}

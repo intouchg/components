@@ -948,9 +948,9 @@
   integrity sha1-26/KlOizE+5tLhk0yi6lo9uiTaE=
 
 "@i/theme@latest":
-  version "0.0.38"
-  resolved "https://intazdoweb.intouchsol.com/IntouchDesignSystem/_packaging/IntouchDesignSystem/npm/registry/@i/theme/-/theme-0.0.38.tgz#951825f4fb316b5a95e024188a7f500648d72f10"
-  integrity sha1-lRgl9Psxa1qV4CQYin9QBkjXLxA=
+  version "0.0.39"
+  resolved "https://intazdoweb.intouchsol.com/IntouchDesignSystem/_packaging/IntouchDesignSystem/npm/registry/@i/theme/-/theme-0.0.39.tgz#9c40e8bd156987f24fc9b5bca25662537967b2b1"
+  integrity sha1-nEDovRVph/JPybW8olZiU3lnsrE=
   dependencies:
     "@babel/runtime" "7.12.5"
     "@i/utility" latest
@@ -1228,7 +1228,7 @@
 "@types/yargs@^15.0.0":
   version "15.0.13"
   resolved "https://intazdoweb.intouchsol.com/IntouchDesignSystem/_packaging/IntouchDesignSystem/npm/registry/@types/yargs/-/yargs-15.0.13.tgz#34f7fec8b389d7f3c1fd08026a5763e072d3c6dc"
-  integrity sha512-kQ5JNTrbDv3Rp5X2n/iUu37IJBDU2gsZ5R/g1/KHOOEc5IKfUFjXT6DENPGduh08I/pamwtEq4oul7gUqKTQDQ==
+  integrity sha1-NPf+yLOJ1/PB/QgCaldj4HLTxtw=
   dependencies:
     "@types/yargs-parser" "*"
 
@@ -1947,9 +1947,9 @@ camelize@^1.0.0:
   integrity sha1-FkpUg+Yw+kMh5a8HAg5TGDGyYJs=
 
 caniuse-lite@^1.0.30001173:
-  version "1.0.30001180"
-  resolved "https://intazdoweb.intouchsol.com/IntouchDesignSystem/_packaging/IntouchDesignSystem/npm/registry/caniuse-lite/-/caniuse-lite-1.0.30001180.tgz#67abcd6d1edf48fa5e7d1e84091d1d65ab76e33b"
-  integrity sha1-Z6vNbR7fSPpefR6ECR0dZat24zs=
+  version "1.0.30001181"
+  resolved "https://intazdoweb.intouchsol.com/IntouchDesignSystem/_packaging/IntouchDesignSystem/npm/registry/caniuse-lite/-/caniuse-lite-1.0.30001181.tgz#4f0e5184e1ea7c3bf2727e735cbe7ca9a451d673"
+  integrity sha1-Tw5RhOHqfDvycn5zXL58qaRR1nM=
 
 chalk@^2.0.0, chalk@^2.1.0:
   version "2.4.2"
