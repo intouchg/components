@@ -1,22 +1,26 @@
 import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
-import { defaultVariantName, themePaddingProps } from '@i/theme'
+import { defaultVariantName, themePaddingProps, themeBorderProps } from '@i/theme'
 import { styleFunctions, variantsFunction, filterThemeProps, sx } from './core'
 import type { StyleProps, VariantProps } from './core'
+
+const paddingAndBorderProps = [
+    ...themePaddingProps,
+    ...themeBorderProps,
+]
 
 const SelectContainer = styled.span<StyleProps & VariantProps>`
     ${(props) => {
         const styleProps = styleFunctions(props)
-        const paddingStyleProps = filterThemeProps(styleProps, themePaddingProps)
         const variantProps = variantsFunction('selects')(props)
-        const paddingVariantProps = filterThemeProps(variantProps, themePaddingProps)
+        const filteredStyleProps = filterThemeProps(styleProps, paddingAndBorderProps)
+        const filteredVariantProps = filterThemeProps(variantProps, paddingAndBorderProps)
 
         return css`
             box-sizing: border-box;
             position: relative;
             display: block;
             background-color: #ffffff;
-            overflow: hidden;
 
             select {
                 appearance: none;
@@ -31,13 +35,18 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
                 background-color: transparent;
                 outline: none;
                 cursor: pointer;
-                ${paddingVariantProps}
-                ${paddingStyleProps}
+                ${filteredVariantProps}
+                ${filteredStyleProps}
                 margin: 0;
             }
 
             select + span {
                 position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                top: 0;
+                bottom: 0;
                 right: 0;
                 width: 1em;
                 font-family: inherit;
@@ -47,9 +56,10 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
                 color: inherit;
                 background-color: inherit;
                 pointer-events: none;
-                ${paddingVariantProps}
-                ${paddingStyleProps}
+                ${filteredVariantProps}
+                ${filteredStyleProps}
                 padding-left: 0.5em;
+                border-left-style: none;
             }
 
             select:focus-visible + span + span {
@@ -66,6 +76,7 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
             ${styleProps}
             ${sx}
             padding: 0;
+            border-style: none;
         `
     }}
 `
