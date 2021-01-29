@@ -13,7 +13,14 @@ const Button = styled.button<StyleProps & VariantProps>`
 	font-size: inherit;
 	line-height: inherit;
 	text-decoration: none;
+	outline: none;
 	cursor: pointer;
+
+	&:focus-visible {
+        outline: 2px auto #005FD7;
+        outline: 2px auto -webkit-focus-ring-color;
+    }
+
 	${variantsFunction('buttons')}
 	${styleFunctions}
 	${sx}

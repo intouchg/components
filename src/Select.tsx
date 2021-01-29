@@ -21,7 +21,7 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
                 appearance: none;
                 width: 100%;
                 margin: 0;
-                border: none;
+                border-style: none;
                 padding: 0;
                 font-family: inherit;
                 font-size: inherit;

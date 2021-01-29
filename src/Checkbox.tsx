@@ -4,7 +4,7 @@ import { defaultVariantName } from '@i/theme'
 import { styleFunctions, variantsFunction, sx } from './core'
 import type { StyleProps, VariantProps } from './core'
 
-export const checkboxSharedStyles = css`
+export const checkboxSharedStyles = `
     box-sizing: border-box;
     position: relative;
     display: inline-flex;
@@ -25,7 +25,9 @@ export const checkboxSharedStyles = css`
         justify-content: center;
         width: 1em;
         height: 1em;
+        border-width: 1px;
         border-style: solid;
+        border-color: #767676;
         pointer-events: none;
     }
 
