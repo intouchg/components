@@ -7,10 +7,10 @@ import type { StyleProps, VariantProps } from './core'
 const Slider = styled.input.attrs({ type: 'range' })<
     & StyleProps
     & VariantProps
-    & { filled?: boolean }
+    & { unfilled?: boolean }
 >`
     box-sizing: border-box;
-    appearance: ${(props) => props.filled ? 'none' : 'auto'};
+    appearance: ${(props) => props.unfilled ? 'none' : 'auto'};
     width: 100%;
     height: 4px;
     background-color: #efefef;
