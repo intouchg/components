@@ -1,11 +1,11 @@
 import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 import { defaultVariantName, componentVariantsPropertyMap } from '@i/theme'
-import { styleFunctions, variantsFunction, svgColor } from './core'
+import { styleFunctions, variantsFunction, sx } from './core'
 import { focusWithinOutlineStyles } from './styles'
-import type { StyleProps, VariantProps, SvgColorProps } from './core'
+import type { StyleProps, VariantProps } from './core'
 
-export const checkboxSharedStyles = css<SvgColorProps>`
+export const checkboxSharedStyles = css`
     box-sizing: border-box;
     position: relative;
     display: inline-flex;
@@ -30,7 +30,6 @@ export const checkboxSharedStyles = css<SvgColorProps>`
 
     span svg {
         position: absolute;
-        ${svgColor}
     }
 
     input:checked + span {
@@ -39,14 +38,11 @@ export const checkboxSharedStyles = css<SvgColorProps>`
 `
 
 
-const CheckboxContainer = styled.span<
-    & StyleProps
-    & VariantProps
-    & SvgColorProps
->`
+const CheckboxContainer = styled.span<StyleProps & VariantProps>`
     ${checkboxSharedStyles}
     ${variantsFunction(componentVariantsPropertyMap.checkbox)}
     ${styleFunctions}
+    ${sx}
 `
 
 const Checkbox = forwardRef((

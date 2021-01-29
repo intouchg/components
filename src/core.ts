@@ -1,18 +1,18 @@
-import { variant, compose, space, layout, flexbox, position, color, background, border, shadow, typography } from 'styled-system'
+import { system, variant, compose, space, layout, flexbox, grid, position, color, background, border, shadow, typography } from 'styled-system'
 import isHTMLProp from '@emotion/is-prop-valid'
 import memoize from '@emotion/memoize'
 import { props as defaultThemePropStrings } from '@styled-system/should-forward-prop'
 import { customThemeProps, defaultVariantName, componentVariantsPropertyMap } from '@i/theme'
-import { textTransform, textDecoration } from './styleFunctions'
-import type { LayoutProps, FlexboxProps, PositionProps, SpaceProps, ColorProps, BackgroundProps, BorderProps, ShadowProps, TypographyProps } from 'styled-system'
+import type { LayoutProps, FlexboxProps, GridProps, PositionProps, SpaceProps, ColorProps, BackgroundProps, BorderProps, ShadowProps, TypographyProps } from 'styled-system'
 import type { StyleProperty } from '@i/theme'
-import type { TextTransformProps, TextDecorationProps } from './styleFunctions'
 
-export * from './styleFunctions'
+
 
 export const variantsFunction = (themePropName: typeof componentVariantsPropertyMap[keyof typeof componentVariantsPropertyMap]) => variant({ scale: themePropName, variants: { [defaultVariantName]: {} } })
 
 export type VariantProps = { variant?: string }
+
+
 
 export const callAll = (...fns: Function[]) => (...args: any[]) => fns.forEach(fn => fn && fn(...args))
 
@@ -43,9 +43,47 @@ export const filterThemeProps = <T extends { [key in StyleProperty]: any }>(prop
     return filteredProps
 }
 
+
+
+export const customStyleFunction = (props: any) => system({
+
+    // SVG
+    fill: { scale: 'colors' },
+	stroke: { scale: 'colors' },
+    strokeWidth: true,
+
+    // Text
+    textDecoration: true,
+    textTransform: true,
+
+})
+
+export type CustomStyleProps = {
+
+    // SVG
+    fill?: string
+    stroke?: string
+    strokeWidth?: string
+
+    // Text
+    textDecoration?: string
+    textTransform?:
+		| 'none'
+		| 'capitalize'
+		| 'uppercase'
+		| 'lowercase'
+		| 'unset'
+		| 'initial'
+        | 'inherit'
+
+}
+
+
+
 export const styleFunctions = compose(
 	layout,
-	flexbox,
+    flexbox,
+    grid,
 	position,
 	space,
 	color,
@@ -53,13 +91,13 @@ export const styleFunctions = compose(
 	border,
 	shadow,
 	typography,
-	textTransform,
-	textDecoration,
+	customStyleFunction,
 )
 
 export type StyleProps =
 	& LayoutProps
-	& FlexboxProps
+    & FlexboxProps
+    & GridProps
     & PositionProps
     & SpaceProps
     & ColorProps
@@ -67,5 +105,17 @@ export type StyleProps =
     & BorderProps
     & ShadowProps
 	& TypographyProps
-	& TextTransformProps
-	& TextDecorationProps
+	& CustomStyleProps
+
+
+
+export const sx = (props: any) => {
+    if (!props || !props.sx) return
+    const styles = {} as any
+
+    for (const key in props.sx) {
+        styles[key] = styleFunctions({ ...props.sx[key], theme: props.theme })
+    }
+
+    return styles
+}

@@ -1,14 +1,10 @@
 import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 import { defaultVariantName, componentVariantsPropertyMap, themePaddingProps } from '@i/theme'
-import { styleFunctions, variantsFunction, svgColor, filterThemeProps } from './core'
-import type { StyleProps, VariantProps, SvgColorProps } from './core'
+import { styleFunctions, variantsFunction, filterThemeProps, sx } from './core'
+import type { StyleProps, VariantProps } from './core'
 
-const SelectContainer = styled.span<
-    & StyleProps
-    & VariantProps
-    & SvgColorProps
->`
+const SelectContainer = styled.span<StyleProps & VariantProps>`
     ${(props) => {
         const styleProps = styleFunctions(props)
         const paddingStyleProps = filterThemeProps(styleProps, themePaddingProps)
@@ -22,7 +18,6 @@ const SelectContainer = styled.span<
             background-color: #ffffff;
             ${variantProps}
             ${styleProps}
-            ${svgColor}
             padding: 0;
 
             select {
@@ -58,6 +53,8 @@ const SelectContainer = styled.span<
                 ${paddingStyleProps}
                 padding-left: 0.5em;
             }
+
+            ${sx}
         `
     }}
 `

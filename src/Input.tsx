@@ -1,17 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import { defaultVariantName, componentVariantsPropertyMap } from '@i/theme'
-import { styleFunctions, variantsFunction, hoverColor, focusColor } from './core'
-import type { StyleProps, VariantProps, HoverColorProps, FocusColorProps } from './core'
+import { styleFunctions, variantsFunction, sx } from './core'
+import type { StyleProps, VariantProps } from './core'
 
 const Input = styled.input.attrs((props) => ({
 	type: props.type || 'text',
-}))<
-	& StyleProps
-	& VariantProps
-	& HoverColorProps
-	& FocusColorProps
->`
+}))<StyleProps & VariantProps>`
 	box-sizing: border-box;
 	border-style: none;
 	padding: 0;
@@ -20,8 +15,7 @@ const Input = styled.input.attrs((props) => ({
 	line-height: inherit;
 	${variantsFunction(componentVariantsPropertyMap.input)}
 	${styleFunctions}
-	${hoverColor}
-	${focusColor}
+	${sx}
 `
 
 Input.defaultProps = { variant: defaultVariantName }
