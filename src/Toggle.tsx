@@ -24,7 +24,7 @@ const ToggleContainer = styled.button.attrs({
 			fill: #ffffff;
 			stroke: #005FD7;
 			stroke: -webkit-focus-ring-color;
-			stroke-width: 1px;
+			stroke-width: 0.5px;
 			border-width: 1px;
 			border-style: solid;
 			border-radius: 9999px;
@@ -65,6 +65,7 @@ const ToggleContainer = styled.button.attrs({
 			}
 
 			span svg {
+				width: 100%;
 				overflow: visible;
 			}
 
