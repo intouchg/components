@@ -21,7 +21,8 @@ const ToggleContainer = styled.button.attrs({
 			height: ${props.height || '1.825em'};
 			font-size: inherit;
 			color: #ffffff;
-			fill: #ffffff;
+			fill: #005FD7;
+			fill: -webkit-focus-ring-color;
 			stroke: #005FD7;
 			stroke: -webkit-focus-ring-color;
 			stroke-width: 0.5px;
@@ -37,6 +38,8 @@ const ToggleContainer = styled.button.attrs({
 			}
 
 			&[aria-checked=true] {
+				fill: #ffffff;
+				stroke: #ffffff;
 				background-color: #005FD7;
 				background-color: -webkit-focus-ring-color;
 				${props.backgroundColor || props.bg ? `background-color: ${String(props.backgroundColor || props.bg)};` : ''}
