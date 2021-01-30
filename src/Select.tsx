@@ -26,12 +26,13 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
                 font-family: inherit;
                 font-size: inherit;
                 line-height: inherit;
+                padding: 0 0.25em;
                 color: inherit;
                 background-color: #ffffff;
                 border-width: 1px;
                 border-style: solid;
                 border-color: #767676;
-                border-radius: 2px;
+                border-radius: 1px;
             }
 
             select {
@@ -57,8 +58,10 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
                 pointer-events: none;
                 ${filteredVariantProps}
                 ${filteredStyleProps}
-                padding-left: 0.5em;
+                padding-left: 0.25em;
                 border-left-style: none;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
             }
 
             select:focus-visible + span + span {
@@ -72,8 +75,7 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
             }
 
             select:disabled, select:disabled + span {
-                color: #d1d1d1;
-                fill: #d1d1d1;
+                fill: #a6a6a6;
                 background-color: #f8f8f8;
                 border-color: #d1d1d1;
                 cursor: auto;

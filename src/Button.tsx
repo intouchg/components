@@ -17,6 +17,7 @@ const Button = styled.button<
 	text-decoration: none;
 	border-style: solid;
 	border-width: 1px;
+	border-radius: 1px;
 	outline: none;
 	cursor: pointer;
 
