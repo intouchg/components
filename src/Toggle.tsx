@@ -2,6 +2,7 @@ import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 import { paddingProps } from '@i/theme'
 import { styleFunctions, variantsFunction, filterThemeProps, sx } from './core'
+import { DotIcon } from './index'
 import type { StyleProps, VariantProps } from './core'
 
 const ToggleContainer = styled.button.attrs({
@@ -97,16 +98,6 @@ const ToggleContainer = styled.button.attrs({
 	}}
 `
 
-const ToggleIcon = () => (
-	<svg viewBox="0 0 10 10">
-		<circle
-			cx="5"
-			cy="5"
-			r="5"
-		/>
-	</svg>
-)
-
 const Toggle = forwardRef((
     {
 		checked,
@@ -127,7 +118,7 @@ const Toggle = forwardRef((
 		{...props}
 	>
 		<span aria-hidden="true">
-			{icon || (<ToggleIcon />)}
+			{icon || (<DotIcon />)}
 		</span>
 	</ToggleContainer>
 ))

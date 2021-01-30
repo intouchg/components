@@ -2,6 +2,7 @@ import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 import { defaultVariantName, borderProps, backgroundProps } from '@i/theme'
 import { styleFunctions, variantsFunction, filterThemeProps, sx } from './core'
+import { CheckIcon } from './index'
 import type { StyleProps, VariantProps } from './core'
 
 export const checkboxSharedStyles = `
@@ -111,12 +112,6 @@ const CheckboxContainer = styled.span<StyleProps & VariantProps>`
     }}
 `
 
-const CheckboxIcon = () => (
-	<svg viewBox="0 0 24 24">
-		<path d="M20.3 2l-11.3 11.6-5.3-5-3.7 3.7 9 8.7 15-15.3z" />
-	</svg>
-)
-
 const Checkbox = forwardRef((
     {
         checked,
@@ -150,7 +145,7 @@ const Checkbox = forwardRef((
             onChange={onChange}
         />
         <span aria-hidden="true">
-            {icon || (<CheckboxIcon />)}
+            {icon || (<CheckIcon />)}
         </span>
     </CheckboxContainer>
 ))

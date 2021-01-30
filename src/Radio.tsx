@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 import { defaultVariantName } from '@i/theme'
 import { checkboxSharedStyles, borderAndBackgroundProps } from './Checkbox'
 import { styleFunctions, variantsFunction, filterThemeProps, sx } from './core'
+import { DotIcon } from './index'
 import type { StyleProps, VariantProps } from './core'
 
 const RadioContainer = styled.span<StyleProps & VariantProps>`
@@ -37,16 +38,6 @@ const RadioContainer = styled.span<StyleProps & VariantProps>`
     }}
 `
 
-const RadioIcon = () => (
-    <svg viewBox="0 0 5 5">
-        <circle
-            cx="2.5"
-            cy="2.5"
-            r="1.75"
-        />
-    </svg>
-)
-
 const Radio = forwardRef((
     {
         checked,
@@ -79,7 +70,7 @@ const Radio = forwardRef((
             onChange={onChange}
         />
         <span aria-hidden="true">
-            {icon || (<RadioIcon />)}
+            {icon || (<DotIcon />)}
         </span>
     </RadioContainer>
 ))
