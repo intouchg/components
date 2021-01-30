@@ -1,23 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-import { defaultVariantName, componentVariantsPropertyMap } from '@i/theme'
-import { styleFunctions, variantsFunction, hoverColor, activeColor, visitedColor } from './core'
-import type { StyleProps, VariantProps, HoverColorProps, ActiveColorProps, VisitedColorProps } from './core'
+import { defaultVariantName } from '@i/theme'
+import { styleFunctions, variantsFunction, sx } from './core'
+import type { StyleProps, VariantProps } from './core'
 
-const Link = styled.a<
-	& StyleProps
-	& VariantProps
-	& HoverColorProps
-	& ActiveColorProps
-	& VisitedColorProps
->`
+const Link = styled.a<StyleProps & VariantProps>`
 	box-sizing: border-box;
 	cursor: pointer;
-	${variantsFunction(componentVariantsPropertyMap.link)}
+	${variantsFunction('links')}
 	${styleFunctions}
-	${hoverColor}
-	${activeColor}
-	${visitedColor}
+	${sx}
 `
 
 Link.defaultProps = { variant: defaultVariantName }

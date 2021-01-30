@@ -1,28 +1,45 @@
 import React from 'react'
 import styled from 'styled-components'
-import { defaultVariantName, componentVariantsPropertyMap } from '@i/theme'
-import { styleFunctions, variantsFunction, hoverColor, activeColor } from './core'
-import type { StyleProps, VariantProps, HoverColorProps, ActiveColorProps } from './core'
+import { defaultVariantName } from '@i/theme'
+import { styleFunctions, variantsFunction, sx } from './core'
+import type { StyleProps, VariantProps } from './core'
 
-const Button = styled.button<
+const Button = styled.button.attrs((props) => ({
+	type: props.type || 'button',
+}))<
 	& StyleProps
 	& VariantProps
-	& HoverColorProps
-	& ActiveColorProps
+	& { invisible?: boolean }
 >`
 	box-sizing: border-box;
-	background-color: transparent;
-	border-style: none;
 	padding: 0;
 	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
 	text-decoration: none;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 1px;
+	outline: none;
 	cursor: pointer;
-	${variantsFunction(componentVariantsPropertyMap.button)}
+
+	${(props) => props.invisible ? `
+		border-style: none;
+		background-color: transparent;
+	` : ''}
+
+	&:focus-visible {
+        outline: 2px auto #005FD7;
+        outline: 2px auto -webkit-focus-ring-color;
+    }
+
+	&:disabled {
+		cursor: auto;
+	}
+
+	${variantsFunction('buttons')}
 	${styleFunctions}
-	${hoverColor}
-	${activeColor}
+	${sx}
 `
 
 Button.defaultProps = { variant: defaultVariantName }

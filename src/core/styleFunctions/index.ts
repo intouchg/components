@@ -1,7 +1,0 @@
-export * from './activeColor'
-export * from './focusColor'
-export * from './hoverColor'
-export * from './svgColor'
-export * from './textDecoration'
-export * from './textTransform'
-export * from './visitedColor'

@@ -1,69 +1,100 @@
 import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
-import { defaultVariantName, componentVariantsPropertyMap, themePaddingProps } from '@i/theme'
-import { styleFunctions, variantsFunction, svgColor, filterThemeProps } from './core'
-import type { StyleProps, VariantProps, SvgColorProps } from './core'
+import { defaultVariantName, borderProps, paddingProps, backgroundProps } from '@i/theme'
+import { styleFunctions, variantsFunction, filterThemeProps, sx } from './core'
+import { ChevronIcon } from './index'
+import type { StyleProps, VariantProps } from './core'
 
-const SelectContainer = styled.span<
-    & StyleProps
-    & VariantProps
-    & SvgColorProps
->`
+const filterProps = [
+    ...backgroundProps,
+    ...borderProps,
+    ...paddingProps,
+]
+
+const SelectContainer = styled.span<StyleProps & VariantProps>`
     ${(props) => {
         const styleProps = styleFunctions(props)
-        const paddingStyleProps = filterThemeProps(styleProps, themePaddingProps)
-        const variantProps = variantsFunction(componentVariantsPropertyMap.select)(props)
-        const paddingVariantProps = filterThemeProps(variantProps, themePaddingProps)
+        const variantProps = variantsFunction('selects')(props)
+        const filteredStyleProps = filterThemeProps(styleProps, filterProps)
+        const filteredVariantProps = filterThemeProps(variantProps, filterProps)
 
         return css`
             box-sizing: border-box;
             position: relative;
             display: block;
-            background-color: #ffffff;
-            ${variantProps}
-            ${styleProps}
-            ${svgColor}
-            padding: 0;
+
+            select, select + span {
+                font-family: inherit;
+                font-size: inherit;
+                line-height: inherit;
+                padding: 0 0.25em;
+                color: inherit;
+                background-color: #ffffff;
+                border-width: 1px;
+                border-style: solid;
+                border-color: #767676;
+                border-radius: 1px;
+            }
 
             select {
                 appearance: none;
                 width: 100%;
-                margin: 0;
-                border: none;
-                padding: 0;
-                font-family: inherit;
-                font-size: inherit;
-                line-height: inherit;
-                color: inherit;
-                background-color: transparent;
                 outline: none;
                 cursor: pointer;
-                ${paddingVariantProps}
-                ${paddingStyleProps}
+                ${filteredVariantProps}
+                ${filteredStyleProps}
                 margin: 0;
             }
 
-            span {
+            select + span {
                 position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                top: 0;
+                bottom: 0;
                 right: 0;
-                width: 1em;
-                font-family: inherit;
-                font-size: inherit;
-                line-height: inherit;
-                border-style: none;
-                color: inherit;
-                background-color: inherit;
+                width: 0.75em;
                 pointer-events: none;
-                ${paddingVariantProps}
-                ${paddingStyleProps}
-                padding-left: 0.5em;
+                ${filteredVariantProps}
+                ${filteredStyleProps}
+                padding-left: 0.25em;
+                border-left-style: none;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
             }
+
+            select:focus-visible + span + span {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                outline: 2px auto #005FD7;
+                outline: 2px auto -webkit-focus-ring-color;
+            }
+
+            select:disabled, select:disabled + span {
+                opacity: 1;
+                color: #a6a6a6;
+                fill: #a6a6a6;
+                background-color: #f8f8f8;
+                border-color: #d1d1d1;
+                cursor: auto;
+            }
+
+            ${variantProps}
+            ${styleProps}
+            ${sx}
+            padding: 0;
+            border-style: none;
         `
     }}
 `
 
 const Select = forwardRef((
     {
+        disabled,
         id,
         name,
         value,
@@ -76,6 +107,7 @@ const Select = forwardRef((
 ) => (
     <SelectContainer {...props}>
         <select
+            disabled={disabled}
             id={id}
             name={name}
             value={value}
@@ -85,8 +117,9 @@ const Select = forwardRef((
             {children}
         </select>
         <span aria-hidden="true">
-            {icon}
+            {icon || (<ChevronIcon />)}
         </span>
+        <span aria-hidden="true" />
     </SelectContainer>
 ))
 

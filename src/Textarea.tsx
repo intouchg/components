@@ -4,17 +4,17 @@ import { defaultVariantName } from '@i/theme'
 import { styleFunctions, variantsFunction, sx } from './core'
 import type { StyleProps, VariantProps } from './core'
 
-const Text = styled.span<StyleProps & VariantProps>`
+const Textarea = styled.textarea<StyleProps & VariantProps>`
 	box-sizing: border-box;
-	${variantsFunction('texts')}
+	${variantsFunction('textareas')}
 	${styleFunctions}
 	${sx}
 `
 
-Text.defaultProps = { variant: defaultVariantName }
+Textarea.defaultProps = { variant: defaultVariantName }
 
-;(Text as any).themeComponent = 'text'
+;(Textarea as any).themeComponent = 'textarea'
 
-Text.displayName = 'Text'
+Textarea.displayName = 'Textarea'
 
-export { Text }
+export { Textarea }

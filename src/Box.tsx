@@ -1,17 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { grid } from 'styled-system'
-import { styleFunctions } from './core'
+import { styleFunctions, sx } from './core'
 import type { StyleProps } from './core'
-import type { GridProps } from 'styled-system'
 
-const Box = styled.div<
-    & StyleProps
-    & GridProps
->`
+const Box = styled.div<StyleProps>`
     box-sizing: border-box;
     ${styleFunctions}
-    ${grid}
+    ${sx}
 `
 
 Box.displayName = 'Box'
