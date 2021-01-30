@@ -38,7 +38,6 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
             select {
                 appearance: none;
                 width: 100%;
-                padding: 0;
                 outline: none;
                 cursor: pointer;
                 ${filteredVariantProps}
@@ -61,7 +60,7 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
                 padding-left: 0.25em;
                 border-left-style: none;
                 border-top-left-radius: 0;
-                border-top-right-radius: 0;
+                border-bottom-left-radius: 0;
             }
 
             select:focus-visible + span + span {
@@ -75,6 +74,8 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
             }
 
             select:disabled, select:disabled + span {
+                opacity: 1;
+                color: #a6a6a6;
                 fill: #a6a6a6;
                 background-color: #f8f8f8;
                 border-color: #d1d1d1;

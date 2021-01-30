@@ -12,6 +12,8 @@ const Input = styled.input.attrs((props) => ({
 	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
+	border-width: 1px;
+	border-style: solid;
 	${variantsFunction('inputs')}
 	${styleFunctions}
 	${sx}
