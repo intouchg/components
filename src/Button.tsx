@@ -4,7 +4,9 @@ import { defaultVariantName } from '@i/theme'
 import { styleFunctions, variantsFunction, sx } from './core'
 import type { StyleProps, VariantProps } from './core'
 
-const Button = styled.button<
+const Button = styled.button.attrs((props) => ({
+	type: props.type || 'button',
+}))<
 	& StyleProps
 	& VariantProps
 	& { invisible?: boolean }
