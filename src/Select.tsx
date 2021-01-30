@@ -1,10 +1,11 @@
 import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
-import { defaultVariantName, borderProps, paddingProps } from '@i/theme'
+import { defaultVariantName, borderProps, paddingProps, backgroundProps } from '@i/theme'
 import { styleFunctions, variantsFunction, filterThemeProps, sx } from './core'
 import type { StyleProps, VariantProps } from './core'
 
-const borderAndPaddingProps = [
+const filterProps = [
+    ...backgroundProps,
     ...borderProps,
     ...paddingProps,
 ]
@@ -13,26 +14,30 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
     ${(props) => {
         const styleProps = styleFunctions(props)
         const variantProps = variantsFunction('selects')(props)
-        const filteredStyleProps = filterThemeProps(styleProps, borderAndPaddingProps)
-        const filteredVariantProps = filterThemeProps(variantProps, borderAndPaddingProps)
+        const filteredStyleProps = filterThemeProps(styleProps, filterProps)
+        const filteredVariantProps = filterThemeProps(variantProps, filterProps)
 
         return css`
             box-sizing: border-box;
             position: relative;
             display: block;
-            background-color: #ffffff;
 
-            select {
-                appearance: none;
-                width: 100%;
-                margin: 0;
-                border-style: none;
-                padding: 0;
+            select, select + span {
                 font-family: inherit;
                 font-size: inherit;
                 line-height: inherit;
                 color: inherit;
-                background-color: transparent;
+                background-color: #ffffff;
+                border-width: 1px;
+                border-style: solid;
+                border-color: #767676;
+                border-radius: 2px;
+            }
+
+            select {
+                appearance: none;
+                width: 100%;
+                padding: 0;
                 outline: none;
                 cursor: pointer;
                 ${filteredVariantProps}
@@ -44,17 +49,11 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
                 position: absolute;
                 display: flex;
                 align-items: center;
-                justify-content: center;
+                justify-content: flex-end;
                 top: 0;
                 bottom: 0;
                 right: 0;
-                width: 1em;
-                font-family: inherit;
-                font-size: inherit;
-                line-height: inherit;
-                border-style: none;
-                color: inherit;
-                background-color: inherit;
+                width: 0.75em;
                 pointer-events: none;
                 ${filteredVariantProps}
                 ${filteredStyleProps}
@@ -72,6 +71,11 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
                 outline: 2px auto -webkit-focus-ring-color;
             }
 
+            select:disabled, select:disabled + span {
+                background-color: #f8f8f8;
+                border-color: #d1d1d1;
+            }
+
             ${variantProps}
             ${styleProps}
             ${sx}
@@ -83,6 +87,7 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
 
 const Select = forwardRef((
     {
+        disabled,
         id,
         name,
         value,
@@ -95,6 +100,7 @@ const Select = forwardRef((
 ) => (
     <SelectContainer {...props}>
         <select
+            disabled={disabled}
             id={id}
             name={name}
             value={value}
