@@ -8,7 +8,7 @@ const Input = styled.input.attrs((props) => ({
 	type: props.type || 'text',
 }))<StyleProps & VariantProps>`
 	box-sizing: border-box;
-	padding: 0;
+	padding: 0 0.25em;
 	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
