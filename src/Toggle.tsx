@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
-import { paddingProps } from '@i/theme'
+import { defaultVariantName, paddingProps } from '@i/theme'
 import { styleFunctions, variantsFunction, filterThemeProps, sx } from './core'
 import { DotIcon } from './index'
 import type { StyleProps, VariantProps } from './core'
@@ -11,7 +11,7 @@ const ToggleContainer = styled.button.attrs({
 })<StyleProps & VariantProps>`
 	${(props) => {
 		const styleProps = styleFunctions(props)
-		const variantProps = variantsFunction('radios')(props)
+		const variantProps = variantsFunction('toggles')(props)
 		const filteredStyleProps = filterThemeProps(styleProps, paddingProps)
 		const filteredVariantProps = filterThemeProps(variantProps, paddingProps)
 
@@ -122,5 +122,12 @@ const Toggle = forwardRef((
 		</span>
 	</ToggleContainer>
 ))
+
+
+Toggle.defaultProps = { variant: defaultVariantName }
+
+;(Toggle as any).themeComponent = 'toggle'
+
+Toggle.displayName = 'Toggle'
 
 export { Toggle }
