@@ -24,6 +24,10 @@ const Slider = styled.input.attrs({ type: 'range' })<
         outline: 2px auto -webkit-focus-ring-color;
     }
 
+    &:disabled {
+        cursor: auto;
+    }
+
     ${variantsFunction('sliders')}
     ${styleFunctions}
     ${sx}

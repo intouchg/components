@@ -42,6 +42,18 @@ const ToggleContainer = styled.button.attrs({
 				${props.backgroundColor || props.bg ? `background-color: ${String(props.backgroundColor || props.bg)};` : ''}
 			}
 
+			&:disabled {
+				fill: #f8f8f8;
+				stroke: #f8f8f8;
+				background-color: #d1d1d1;
+				border-color: #d1d1d1;
+				cursor: auto;
+			}
+
+			&[aria-checked=true]:disabled {
+				background-color: #a6a6a6;
+			}
+
 			span {
 				box-sizing: border-box;
 				display: flex;
@@ -94,7 +106,8 @@ const ToggleIcon = () => (
 
 const Toggle = forwardRef((
     {
-        checked,
+		checked,
+		disabled,
         id,
         onClick,
         icon,
@@ -104,6 +117,7 @@ const Toggle = forwardRef((
 ) => (
 	<ToggleContainer
 		aria-checked={checked}
+		disabled={disabled}
 		id={id}
 		ref={ref}
 		onClick={onClick}
