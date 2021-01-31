@@ -4,14 +4,16 @@ import { defaultVariantName } from '@i/theme'
 import { styleFunctions, variantsFunction, sx } from './core'
 import type { StyleProps, VariantProps } from './core'
 
-const Textarea = styled.textarea<
+const Textarea = styled.textarea.attrs((props) => ({
+	rows: props.rows || 4,
+}))<
 	& StyleProps
 	& VariantProps
 	& { resize?: string }
 >`
 	box-sizing: border-box;
 	resize: ${(props) => props.resize || 'none'};
-	padding: 0 0.25em;
+	padding: 0.25em;
 	font-family: inherit;
     font-size: inherit;
     line-height: inherit;

@@ -16,6 +16,7 @@ const Button = styled.button.attrs((props) => ({
 	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
+	color: inherit;
 	text-decoration: none;
 	border-style: solid;
 	border-width: 1px;
