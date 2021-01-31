@@ -51,13 +51,16 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
                 bottom: 0;
                 right: 0;
                 width: 0.75em;
-                pointer-events: none;
                 ${filteredVariantProps}
                 ${filteredStyleProps}
                 padding-left: 0.25em;
                 border-left-style: none;
                 border-top-left-radius: 0;
                 border-bottom-left-radius: 0;
+            }
+
+            span {
+                pointer-events: none;
             }
 
             select:focus-visible + span + span {
