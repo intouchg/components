@@ -14,12 +14,9 @@ const Textarea = styled.textarea.attrs((props) => ({
 	box-sizing: border-box;
 	resize: ${(props) => props.resize || 'none'};
 	padding: 0.25em;
-	font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
+	font: inherit;
     color: inherit;
-	border-width: 1px;
-	border-style: solid;
+	border: 1px solid;
 	border-radius: 2px;
 	outline: none;
 

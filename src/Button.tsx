@@ -13,13 +13,10 @@ const Button = styled.button.attrs((props) => ({
 >`
 	box-sizing: border-box;
 	padding: 0;
-	font-family: inherit;
-	font-size: inherit;
-	line-height: inherit;
+	font: inherit;
 	color: inherit;
 	text-decoration: none;
-	border-style: solid;
-	border-width: 1px;
+	border: 1px solid;
 	border-radius: 1px;
 	outline: none;
 	cursor: pointer;

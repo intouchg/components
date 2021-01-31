@@ -37,9 +37,7 @@ export const checkboxSharedStyles = `
         display: flex;
         align-items: center;
         justify-content: center;
-        border-width: 1px;
-        border-style: solid;
-        border-color: #767676;
+        border: 1px solid #767676;
         color: rgba(0, 0, 0, 0);
         pointer-events: none;
     }

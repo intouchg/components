@@ -27,8 +27,7 @@ const ToggleContainer = styled.button.attrs({
 			stroke: #005FD7;
 			stroke: -webkit-focus-ring-color;
 			stroke-width: 0.5px;
-			border-width: 1px;
-			border-style: solid;
+			border: 1px solid;
 			border-radius: 9999px;
 			cursor: pointer;
 			outline: none;
@@ -73,9 +72,7 @@ const ToggleContainer = styled.button.attrs({
 				margin-left: -1px;
 				pointer-events: none;
 				transform: translateX(0);
-				transition-property: transform;
-				transition-timing-function: ease-out;
-				transition-duration: 100ms;
+				transition: transform 100ms ease-out;
 				${filteredVariantProps}
 				${filteredStyleProps}
 			}

@@ -9,12 +9,9 @@ const Input = styled.input.attrs((props) => ({
 }))<StyleProps & VariantProps>`
 	box-sizing: border-box;
 	padding: 0 0.25em;
-	font-family: inherit;
-	font-size: inherit;
-	line-height: inherit;
+	font: inherit;
 	color: inherit;
-	border-width: 1px;
-	border-style: solid;
+	border: 1px solid;
 	${variantsFunction('inputs')}
 	${styleFunctions}
 	${sx}

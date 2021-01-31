@@ -24,15 +24,11 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
             display: block;
 
             select, select + span {
-                font-family: inherit;
-                font-size: inherit;
-                line-height: inherit;
+                font: inherit;
                 padding: 0 0.25em;
                 color: inherit;
                 background-color: #ffffff;
-                border-width: 1px;
-                border-style: solid;
-                border-color: #767676;
+                border: 1px solid #767676;
                 border-radius: 1px;
             }
 
