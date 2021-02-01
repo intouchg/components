@@ -21,6 +21,17 @@ const Button = styled.button.attrs((props) => ({
 	outline: none;
 	cursor: pointer;
 
+	${(props) => {
+		if (props.invisible) {
+			props.variant = props.variant || ''
+
+			return `
+				border-style: none;
+				background-color: transparent;
+			`
+		}
+	}}
+
 	${(props) => props.invisible ? `
 		border-style: none;
 		background-color: transparent;
