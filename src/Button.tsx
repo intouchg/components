@@ -21,6 +21,11 @@ const Button = styled.button.attrs((props) => ({
 	outline: none;
 	cursor: pointer;
 
+	${(props) => props.invisible ? `
+		border-style: none;
+		background-color: transparent;
+	` : ''}
+
 	&:focus-visible {
         outline: 2px auto #005FD7;
         outline: 2px auto -webkit-focus-ring-color;
@@ -30,13 +35,7 @@ const Button = styled.button.attrs((props) => ({
 		cursor: auto;
 	}
 
-	${variantsFunction('buttons')}
-
-	${(props) => props.invisible ? `
-		border-style: none;
-		background-color: transparent;
-	` : ''}
-
+	${(props) => props.invisible ? '' : variantsFunction('buttons')(props)}
 	${styleFunctions}
 	${sx}
 `
