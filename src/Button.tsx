@@ -23,7 +23,9 @@ const Button = styled.button.attrs((props) => ({
 
 	${(props) => {
 		if (props.invisible) {
+			console.log(props)
 			props.variant = props.variant || ''
+			console.log(props.variant)
 
 			return `
 				border-style: none;
@@ -31,11 +33,6 @@ const Button = styled.button.attrs((props) => ({
 			`
 		}
 	}}
-
-	${(props) => props.invisible ? `
-		border-style: none;
-		background-color: transparent;
-	` : ''}
 
 	&:focus-visible {
         outline: 2px auto #005FD7;
