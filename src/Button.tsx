@@ -4,8 +4,9 @@ import { defaultVariantName } from '@i/theme'
 import { styleFunctions, variantsFunction, sx } from './core'
 import type { StyleProps, VariantProps } from './core'
 
-const Button = styled.button.attrs((props) => ({
+const Button = styled.button.attrs<{ variant: string, invisible?: boolean }>((props) => ({
 	type: props.type || 'button',
+	variant: props.invisible ? '' : props.variant,
 }))<
 	& StyleProps
 	& VariantProps
@@ -21,6 +22,11 @@ const Button = styled.button.attrs((props) => ({
 	outline: none;
 	cursor: pointer;
 
+	${(props) => props.invisible ? `
+		border-style: none;
+		background-color: transparent;
+	` : ''}
+
 	&:focus-visible {
         outline: 2px auto #005FD7;
         outline: 2px auto -webkit-focus-ring-color;
@@ -30,10 +36,7 @@ const Button = styled.button.attrs((props) => ({
 		cursor: auto;
 	}
 
-	${(props) => !props.invisible ? variantsFunction('buttons') : `
-		border-style: none;
-		background-color: transparent;
-	`}
+	${variantsFunction('buttons')}
 	${styleFunctions}
 	${sx}
 `
