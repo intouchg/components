@@ -63,6 +63,10 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
                 pointer-events: none;
             }
 
+            span svg {
+                width: 100%;
+            }
+
             select:focus-visible + span + span {
                 position: absolute;
                 top: 0;

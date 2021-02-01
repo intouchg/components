@@ -1,6 +1,6 @@
 {
   "name": "@i/components",
-  "version": "0.0.86-beta.1",
+  "version": "0.0.86",
   "description": "React component library for the Intouch Design System",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
