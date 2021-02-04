@@ -43,6 +43,7 @@ const SelectContainer = styled.span<StyleProps & VariantProps>`
             }
 
             select + span {
+                box-sizing: content-box;
                 position: absolute;
                 display: flex;
                 align-items: center;
