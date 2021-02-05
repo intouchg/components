@@ -15,10 +15,8 @@ const RadioContainer = styled.span<StyleProps & VariantProps>`
     }
 
     ${(props) => {
-        const styleProps = styleFunctions(props)
         const variantProps = variantsFunction('radios')(props)
-        const filteredStyleProps = filterThemeProps(styleProps, borderAndBackgroundProps)
-        const filteredVariantProps = filterThemeProps(variantProps, borderAndBackgroundProps)
+        const styleProps = styleFunctions(props)
 
         return css`
             ${variantProps}
@@ -29,8 +27,8 @@ const RadioContainer = styled.span<StyleProps & VariantProps>`
 
             span {
                 border-radius: 9999px;
-                ${filteredStyleProps}
-                ${filteredVariantProps}
+                ${filterThemeProps(variantProps, borderAndBackgroundProps)}
+                ${filterThemeProps(styleProps, borderAndBackgroundProps)}
             }
 
             ${sx}

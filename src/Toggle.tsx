@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
-import { defaultVariantName, paddingProps } from '@i/theme'
+import { defaultVariantName, paddingProps, backgroundProps } from '@i/theme'
 import { styleFunctions, variantsFunction, filterThemeProps, sx } from './core'
 import { DotIcon } from './index'
 import type { StyleProps, VariantProps } from './core'
@@ -12,8 +12,6 @@ const ToggleContainer = styled.button.attrs({
 	${(props) => {
 		const styleProps = styleFunctions(props)
 		const variantProps = variantsFunction('toggles')(props)
-		const filteredStyleProps = filterThemeProps(styleProps, paddingProps)
-		const filteredVariantProps = filterThemeProps(variantProps, paddingProps)
 
 		return css`
 			box-sizing: border-box;
@@ -42,7 +40,8 @@ const ToggleContainer = styled.button.attrs({
 				stroke: #ffffff;
 				background-color: #005FD7;
 				background-color: -webkit-focus-ring-color;
-				${props.backgroundColor || props.bg ? `background-color: ${String(props.backgroundColor || props.bg)};` : ''}
+				${filterThemeProps(variantProps, backgroundProps)}
+				${filterThemeProps(styleProps, backgroundProps)}
 			}
 
 			&:disabled {
@@ -73,8 +72,8 @@ const ToggleContainer = styled.button.attrs({
 				pointer-events: none;
 				transform: translateX(0);
 				transition: transform 100ms ease-out;
-				${filteredVariantProps}
-				${filteredStyleProps}
+				${filterThemeProps(variantProps, paddingProps)}
+				${filterThemeProps(styleProps, paddingProps)}
 			}
 
 			span svg {
