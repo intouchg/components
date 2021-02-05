@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import { defaultVariantName, borderProps, paddingProps, backgroundProps } from '@i/theme'
 import { styleFunctions, variantsFunction, filterThemeProps, sx } from './core'
 import { ChevronIcon } from './index'
-import type { StyleProps, VariantProps } from './core'
+import type { StyleProps, VariantProps, SXProps } from './core'
 
 const filterProps = [
     ...backgroundProps,
@@ -11,7 +11,11 @@ const filterProps = [
     ...paddingProps,
 ]
 
-const SelectContainer = styled.span<StyleProps & VariantProps>`
+const SelectContainer = styled.span<
+    & StyleProps
+    & VariantProps
+    & SXProps
+>`
     ${(props) => {
         const styleProps = styleFunctions(props)
         const variantProps = variantsFunction('selects')(props)

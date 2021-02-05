@@ -2,13 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import { defaultVariantName } from '@i/theme'
 import { styleFunctions, variantsFunction, sx } from './core'
-import type { StyleProps, VariantProps } from './core'
+import type { StyleProps, VariantProps, SXProps } from './core'
 
 const Textarea = styled.textarea.attrs((props) => ({
 	rows: props.rows || 4,
 }))<
 	& StyleProps
 	& VariantProps
+	& SXProps
 	& { resize?: string }
 >`
 	box-sizing: border-box;

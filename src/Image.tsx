@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import { compose, space, layout, position, border, shadow } from 'styled-system'
-import { createShouldForwardProp } from './core'
+import { createShouldForwardProp, sx } from './core'
 import type { ComponentProps } from 'react'
 import type { LayoutProps, PositionProps, SpaceProps, BorderProps, ShadowProps } from 'styled-system'
+import type { SXProps } from './core'
 
 const BaseImage = ({
 	src,
@@ -71,9 +72,11 @@ const Image = styled(BaseImage).withConfig({ shouldForwardProp })<
     & SpaceProps
     & BorderProps
     & ShadowProps
+	& SXProps
 >`
     box-sizing: border-box;
     ${imageStyleFunctions}
+	${sx}
 `
 
 Image.displayName = 'Image'

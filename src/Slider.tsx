@@ -2,11 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import { defaultVariantName } from '@i/theme'
 import { styleFunctions, variantsFunction, sx } from './core'
-import type { StyleProps, VariantProps } from './core'
+import type { StyleProps, VariantProps, SXProps } from './core'
 
 const Slider = styled.input.attrs({ type: 'range' })<
     & StyleProps
     & VariantProps
+    & SXProps
     & { appearance?: string }
 >`
     box-sizing: border-box;

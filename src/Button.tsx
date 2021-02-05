@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { defaultVariantName } from '@i/theme'
 import { styleFunctions, variantsFunction, sx } from './core'
-import type { StyleProps, VariantProps } from './core'
+import type { StyleProps, VariantProps, SXProps } from './core'
 
 const Button = styled.button.attrs<{ variant: string, invisible?: boolean }>((props) => ({
 	type: props.type || 'button',
@@ -10,6 +10,7 @@ const Button = styled.button.attrs<{ variant: string, invisible?: boolean }>((pr
 }))<
 	& StyleProps
 	& VariantProps
+	& SXProps
 	& { invisible?: boolean }
 >`
 	box-sizing: border-box;

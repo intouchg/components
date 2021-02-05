@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import { defaultVariantName, borderProps, backgroundProps } from '@i/theme'
 import { styleFunctions, variantsFunction, filterThemeProps, sx } from './core'
 import { CheckIcon } from './index'
-import type { StyleProps, VariantProps } from './core'
+import type { StyleProps, VariantProps, SXProps } from './core'
 
 export const checkboxSharedStyles = `
     box-sizing: border-box;
@@ -72,7 +72,11 @@ export const borderAndBackgroundProps = [
     ...backgroundProps,
 ]
 
-const CheckboxContainer = styled.span<StyleProps & VariantProps>`
+const CheckboxContainer = styled.span<
+    & StyleProps
+    & VariantProps
+    & SXProps
+>`
     ${checkboxSharedStyles}
 
     input:checked:disabled + span {

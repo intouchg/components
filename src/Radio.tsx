@@ -4,9 +4,13 @@ import { defaultVariantName } from '@i/theme'
 import { checkboxSharedStyles, borderAndBackgroundProps } from './Checkbox'
 import { styleFunctions, variantsFunction, filterThemeProps, sx } from './core'
 import { DotIcon } from './index'
-import type { StyleProps, VariantProps } from './core'
+import type { StyleProps, VariantProps, SXProps } from './core'
 
-const RadioContainer = styled.span<StyleProps & VariantProps>`
+const RadioContainer = styled.span<
+    & StyleProps
+    & VariantProps
+    & SXProps
+>`
     ${checkboxSharedStyles}
 
     input:checked:disabled + span {

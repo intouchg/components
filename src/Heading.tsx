@@ -2,9 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import { defaultVariantName } from '@i/theme'
 import { styleFunctions, variantsFunction, sx } from './core'
-import type { StyleProps, VariantProps } from './core'
+import type { StyleProps, VariantProps, SXProps } from './core'
 
-const Heading = styled.h3<StyleProps & VariantProps>`
+const Heading = styled.h3<
+	& StyleProps
+	& VariantProps
+	& SXProps
+>`
 	box-sizing: border-box;
 	${variantsFunction('headings')}
 	${styleFunctions}

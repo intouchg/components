@@ -3,12 +3,16 @@ import styled, { css } from 'styled-components'
 import { defaultVariantName, paddingProps, backgroundProps } from '@i/theme'
 import { styleFunctions, variantsFunction, filterThemeProps, sx } from './core'
 import { DotIcon } from './index'
-import type { StyleProps, VariantProps } from './core'
+import type { StyleProps, VariantProps, SXProps } from './core'
 
 const ToggleContainer = styled.button.attrs({
 	type: 'button',
 	role: 'switch',
-})<StyleProps & VariantProps>`
+})<
+	& StyleProps
+	& VariantProps
+	& SXProps
+>`
 	${(props) => {
 		const styleProps = styleFunctions(props)
 		const variantProps = variantsFunction('toggles')(props)

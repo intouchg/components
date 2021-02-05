@@ -121,3 +121,11 @@ export const sx = (props: any) => {
 
     return styles
 }
+
+export type SXProps = {
+    sx?: {
+        [selector: string]: {
+            [styleProperty: string]: any
+        }
+    }
+}
