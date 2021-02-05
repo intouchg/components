@@ -89,6 +89,7 @@ const CheckboxContainer = styled.span<StyleProps & VariantProps>`
         return css`
             ${variantProps}
             ${styleProps}
+            padding: 0;
             background: unset;
             background-color: unset;
             border-style: none;
@@ -97,10 +98,6 @@ const CheckboxContainer = styled.span<StyleProps & VariantProps>`
                 border-radius: 2px;
                 ${filterThemeProps(variantProps, borderAndBackgroundProps)}
                 ${filterThemeProps(styleProps, borderAndBackgroundProps)}
-            }
-
-            span svg {
-                padding: 0.05em;
             }
 
             ${sx}

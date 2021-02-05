@@ -21,6 +21,7 @@ const RadioContainer = styled.span<StyleProps & VariantProps>`
         return css`
             ${variantProps}
             ${styleProps}
+            padding: 0;
             background: unset;
             background-color: unset;
             border-style: none;
