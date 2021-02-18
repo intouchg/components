@@ -17,7 +17,7 @@ Layout
 Content
  - [x] Button
  - [x] Heading
- - [x] Icon
+ - [x] Svg
  - [x] Image
  - [x] Link
 

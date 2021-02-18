@@ -4,7 +4,7 @@ import { defaultVariantName } from '@i/theme'
 import { styleFunctions, variantsFunction, sx } from './core'
 import type { StyleProps, VariantProps, SXProps } from './core'
 
-const Icon = styled.svg<
+const Svg = styled.svg<
 	& StyleProps
 	& VariantProps
 	& SXProps
@@ -15,10 +15,10 @@ const Icon = styled.svg<
 	${sx}
 `
 
-Icon.defaultProps = { variant: defaultVariantName }
+Svg.defaultProps = { variant: defaultVariantName }
 
-;(Icon as any).themeComponent = 'icon'
+;(Svg as any).themeComponent = 'icon'
 
-Icon.displayName = 'Icon'
+Svg.displayName = 'Svg'
 
-export { Icon }
+export { Svg }

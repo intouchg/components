@@ -41,7 +41,7 @@ Components:
     FormItem/FormField
     Grid
     Heading
-    Icon
+    Svg
     Image
     Label
     Link

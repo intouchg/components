@@ -1,8 +1,8 @@
 import React from 'react'
-import { Icon } from './index'
+import { Svg } from './index'
 
-const DotIcon = (props: React.ComponentProps<typeof Icon>) => (
-	<Icon
+const DotIcon = (props: React.ComponentProps<typeof Svg>) => (
+	<Svg
 		viewBox="0 0 10 10"
 		{...props}
 	>
@@ -11,7 +11,7 @@ const DotIcon = (props: React.ComponentProps<typeof Icon>) => (
 			cy="5"
 			r="3.5"
 		/>
-	</Icon>
+	</Svg>
 )
 
 export { DotIcon }

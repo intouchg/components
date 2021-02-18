@@ -1,7 +1,4 @@
-- [ ] Accessibility
-- [ ] Unit Tests
-- [ ] Tree Shaking
-- [ ] When creating a new theme, first define base theme values like colors and fonts, then set those values on the components. Create a component view that shows the values being applied in real time. Create a view which shows components that do not have values set.
-- [ ] Dynamic src prop for Image and Icon assets via styled-system
+- [ ] Unit tests
+- [ ] Confirm tree shaking
 - [ ] Fix style props appearing in the DOM using `createShouldForwardProp`
-- [ ] Profile performance before and after switching everything to styled-system compose
+- [ ] More performance profiling
