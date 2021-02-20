@@ -132,16 +132,14 @@ export type SXProps = {
 
 
 
-type Props = { theme: Theme }
-
-export const breakpoint = (index: number) => (props: Props) => props.theme.breakpoints[index]
-export const space = (index: number) => (props: Props) => props.theme.space[index]
-export const color = (name: string) => (props: Props) => props.theme.colors[name]
-export const font = (name: string) => (props: Props) => props.theme.fonts[name]
-export const fontSize = (index: number) => (props: Props) => props.theme.fontSizes[index]
-export const lineHeight = (index: number) => (props: Props) => props.theme.lineHeights[index]
-export const letterSpacing = (index: number) => (props: Props) => props.theme.letterSpacings[index]
-export const borderWidth = (index: number) => (props: Props) => props.theme.borderWidths[index]
-export const radius = (index: number) => (props: Props) => props.theme.radii[index]
-export const shadow = (name: string) => (props: Props) => props.theme.shadows[name]
-export const zIndex = (index: number) => (props: Props) => props.theme.zIndices[index]
+export const breakpoint = (index: number) => (props: any) => props.theme.breakpoints[index]
+export const space = (index: number) => (props: any) => props.theme.space[index]
+export const color = (name: string) => (props: any) => props.theme.colors[name]
+export const font = (name: string) => (props: any) => props.theme.fonts[name]
+export const fontSize = (index: number) => (props: any) => props.theme.fontSizes[index]
+export const lineHeight = (index: number) => (props: any) => props.theme.lineHeights[index]
+export const letterSpacing = (index: number) => (props: any) => props.theme.letterSpacings[index]
+export const borderWidth = (index: number) => (props: any) => props.theme.borderWidths[index]
+export const radius = (index: number) => (props: any) => props.theme.radii[index]
+export const shadow = (name: string) => (props: any) => props.theme.shadows[name]
+export const zIndex = (index: number) => (props: any) => props.theme.zIndices[index]
