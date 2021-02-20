@@ -134,9 +134,11 @@ export type SXProps = {
 
 export const breakpoint = (index: number) => (props: any) => props.theme.breakpoints[index]
 export const space = (index: number) => (props: any) => props.theme.space[index]
+export const size = (index: number) => (props: any) => props.theme.sizes[index]
 export const color = (name: string) => (props: any) => props.theme.colors[name]
 export const font = (name: string) => (props: any) => props.theme.fonts[name]
 export const fontSize = (index: number) => (props: any) => props.theme.fontSizes[index]
+export const fontWeight = (index: number) => (props: any) => props.theme.fontWeights[index]
 export const lineHeight = (index: number) => (props: any) => props.theme.lineHeights[index]
 export const letterSpacing = (index: number) => (props: any) => props.theme.letterSpacings[index]
 export const borderWidth = (index: number) => (props: any) => props.theme.borderWidths[index]
