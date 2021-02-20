@@ -1,10 +1,10 @@
-import { system, variant, compose, space, layout, flexbox, grid, position, color, background, border, shadow, typography } from 'styled-system'
+import { system, variant, compose, space as spaceFn, layout, flexbox, grid, position, color as colorFn, background, border, shadow as shadowFn, typography } from 'styled-system'
 import isHTMLProp from '@emotion/is-prop-valid'
 import memoize from '@emotion/memoize'
 import { props as defaultThemePropStrings } from '@styled-system/should-forward-prop'
 import { customThemeProps, defaultVariantName } from '@i/theme'
 import type { LayoutProps, FlexboxProps, GridProps, PositionProps, SpaceProps, ColorProps, BackgroundProps, BorderProps, ShadowProps, TypographyProps } from 'styled-system'
-import type { StyleProperty, componentVariantsPropertyMap } from '@i/theme'
+import type { StyleProperty, componentVariantsPropertyMap, Theme } from '@i/theme'
 
 
 
@@ -87,11 +87,11 @@ export const styleFunctions = compose(
     flexbox,
     grid,
 	position,
-	space,
-	color,
+	spaceFn,
+	colorFn,
 	background,
 	border,
-	shadow,
+	shadowFn,
 	typography,
 	customStyleFunction,
 )
@@ -129,3 +129,19 @@ export type SXProps = {
         }
     }
 }
+
+
+
+type Props = { theme: Theme }
+
+export const breakpoint = (index: number) => (props: Props) => props.theme.breakpoints[index]
+export const space = (index: number) => (props: Props) => props.theme.space[index]
+export const color = (name: string) => (props: Props) => props.theme.colors[name]
+export const font = (name: string) => (props: Props) => props.theme.fonts[name]
+export const fontSize = (index: number) => (props: Props) => props.theme.fontSizes[index]
+export const lineHeight = (index: number) => (props: Props) => props.theme.lineHeights[index]
+export const letterSpacing = (index: number) => (props: Props) => props.theme.letterSpacings[index]
+export const borderWidth = (index: number) => (props: Props) => props.theme.borderWidths[index]
+export const radius = (index: number) => (props: Props) => props.theme.radii[index]
+export const shadow = (name: string) => (props: Props) => props.theme.shadows[name]
+export const zIndex = (index: number) => (props: Props) => props.theme.zIndices[index]
