@@ -1,6 +1,6 @@
 {
   "name": "@i/components",
-  "version": "0.0.96",
+  "version": "0.0.97",
   "description": "React component library for the Intouch Design System",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -24,6 +24,8 @@
   },
   "devDependencies": {
     "@babel/core": "7.12.10",
+    "@babel/eslint-parser": "7.12.1",
+    "@babel/eslint-plugin": "7.11.5",
     "@babel/plugin-transform-runtime": "7.12.10",
     "@babel/preset-env": "7.12.11",
     "@babel/preset-react": "7.12.10",
@@ -31,8 +33,8 @@
     "@i/eslint-config": "latest",
     "@rollup/plugin-babel": "5.2.2",
     "@rollup/plugin-node-resolve": "11.0.1",
-    "@types/react": "17.0.0",
-    "@types/react-dom": "17.0.0",
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.1",
     "@types/styled-components": "5.1.7",
     "@types/styled-system": "5.1.10",
     "@types/styled-system__should-forward-prop": "5.1.2",
