@@ -42,6 +42,8 @@ export const filterThemeProps = <T extends { [key in StyleProperty]: any }>(prop
 
 
 export const customStyleFunction = system({
+    // Grid
+    gridTemplate: true,
 
     // SVG
     fill: {
@@ -61,6 +63,8 @@ export const customStyleFunction = system({
 })
 
 export type CustomStyleProps = {
+    // Grid
+    gridTemplate?: string
 
     // SVG
     fill?: string
