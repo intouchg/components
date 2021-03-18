@@ -1,5 +1,5 @@
 import React from 'react'
-import { Svg } from './index'
+import { Svg } from './Svg'
 
 const DotIcon = (props: React.ComponentProps<typeof Svg>) => (
 	<Svg

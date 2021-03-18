@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 import { defaultVariantName, borderProps, paddingProps, backgroundProps } from '@i/theme'
 import { styleFunctions, variantsFunction, filterThemeProps, sx } from './core'
-import { ChevronIcon } from './index'
+import { ChevronIcon } from './ChevronIcon'
 import type { StyleProps, VariantProps, SXProps } from './core'
 
 const filterProps = [

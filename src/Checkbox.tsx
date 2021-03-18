@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 import { defaultVariantName, borderProps, backgroundProps } from '@i/theme'
 import { styleFunctions, variantsFunction, filterThemeProps, sx } from './core'
-import { CheckIcon } from './index'
+import { CheckIcon } from './CheckIcon'
 import type { StyleProps, VariantProps, SXProps } from './core'
 
 export const checkboxSharedStyles = `

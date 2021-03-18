@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 import { defaultVariantName, paddingProps, backgroundProps } from '@i/theme'
 import { styleFunctions, variantsFunction, filterThemeProps, sx } from './core'
-import { DotIcon } from './index'
+import { DotIcon } from './DotIcon'
 import type { StyleProps, VariantProps, SXProps } from './core'
 
 const ToggleContainer = styled.button.attrs({
@@ -29,7 +29,7 @@ const ToggleContainer = styled.button.attrs({
 			stroke: #005FD7;
 			stroke: -webkit-focus-ring-color;
 			stroke-width: 0.5px;
-			border: 1px solid;
+			border: 2px solid #005FD7;
 			border-radius: 9999px;
 			cursor: pointer;
 			outline: none;

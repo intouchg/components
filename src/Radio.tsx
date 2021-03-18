@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import { defaultVariantName } from '@i/theme'
 import { checkboxSharedStyles, borderAndBackgroundProps } from './Checkbox'
 import { styleFunctions, variantsFunction, filterThemeProps, sx } from './core'
-import { DotIcon } from './index'
+import { DotIcon } from './DotIcon'
 import type { StyleProps, VariantProps, SXProps } from './core'
 
 const RadioContainer = styled.span<

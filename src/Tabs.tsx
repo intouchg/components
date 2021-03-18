@@ -1,13 +1,7 @@
-import React, { createContext, useState } from 'react'
-import { TabActivate, TabContent } from './index'
-
-type TabsContext = {
-    activeId: string | undefined
-    setActiveId: (id: string) => void
-}
-
-const TabsContext = createContext({} as TabsContext)
-TabsContext.displayName = 'TabsContext'
+import React, { useState } from 'react'
+import { TabsContext } from './TabsContext'
+import { TabActivate } from './TabActivate'
+import { TabContent } from './TabContent'
 
 const Tabs = ({
 	children,
@@ -29,7 +23,4 @@ Tabs.displayName = 'Tabs'
 Tabs.Activate = TabActivate
 Tabs.Content = TabContent
 
-export {
-	Tabs,
-	TabsContext,
-}
+export { Tabs }

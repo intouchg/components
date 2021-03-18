@@ -1,12 +1,5 @@
-import React, { createContext, useState, useEffect, useRef } from 'react'
-
-type AccordionContext = {
-    activeIds: string[]
-    toggleById: (id: string) => void
-}
-
-const AccordionContext = createContext({} as AccordionContext)
-AccordionContext.displayName = 'AccordionContext'
+import React, { useState, useEffect, useRef } from 'react'
+import { AccordionContext } from './AccordionContext'
 
 const Accordion = ({
 	defaultActiveId,
@@ -49,7 +42,4 @@ const Accordion = ({
 
 Accordion.displayName = 'Accordion'
 
-export {
-	Accordion,
-	AccordionContext,
-}
+export { Accordion }

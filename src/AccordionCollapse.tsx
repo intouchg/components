@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { AccordionContext } from './index'
+import { AccordionContext } from './AccordionContext'
 
 const OverflowContainer = styled.div`
 	overflow: hidden;
