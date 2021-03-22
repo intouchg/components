@@ -17,7 +17,7 @@ const Paragraph = styled.p<
 
 Paragraph.defaultProps = { variant: defaultVariantName }
 
-;(Text as any).themeComponent = 'paragraph'
+;(Paragraph as any).themeComponent = 'paragraph'
 
 Paragraph.displayName = 'Paragraph'
 
