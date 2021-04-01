@@ -22,14 +22,12 @@ Content
  - [x] Link
 
 State
- - [x] Accordion
- - [x] AccordionCollapse
- - [x] AccordionToggle
+ - [x] Activatables
+ - [x] ActivatablesClickable
+ - [x] ActivatablesContent
+ - [x] ActivatablesContext
  - [ ] CloseButton (?)
  - [ ] Modal
- - [x] Tabs
- - [x] TabActivate
- - [x] TabContent
  - [ ] Slider
 
 Form

@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { AccordionContext } from './AccordionContext'
+import { ActivatablesContext } from './ActivatablesContext'
+import { ActivatablesClickable } from './ActivatablesClickable'
+import { ActivatablesContent } from './ActivatablesContent'
 
-const Accordion = ({
+const Activatables = ({
 	defaultActiveId,
 	allowMultipleActive = false,
 	children,
@@ -15,7 +17,7 @@ const Accordion = ({
 
 	useEffect(() => {
 		// TO DO: Handle defaultActiveId changing after initial render
-		if (activeIds.join('') === [ previousDefaultActiveId.current ].join('')) {
+		if (activeIds.join('') === previousDefaultActiveId.current) {
 			previousDefaultActiveId.current = defaultActiveId
 			setActiveIds(defaultActiveId ? [ defaultActiveId ] : [])
 		}
@@ -34,12 +36,14 @@ const Accordion = ({
 	}
 
 	return (
-		<AccordionContext.Provider value={{ activeIds, toggleById }}>
+		<ActivatablesContext.Provider value={{ activeIds, toggleById }}>
 			{children}
-		</AccordionContext.Provider>
+		</ActivatablesContext.Provider>
 	)
 }
 
-Accordion.displayName = 'Accordion'
+Activatables.displayName = 'Activatables'
+Activatables.Clickable = ActivatablesClickable
+Activatables.Content = ActivatablesContent
 
-export { Accordion }
+export { Activatables }

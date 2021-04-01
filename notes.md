@@ -27,7 +27,7 @@ Related Libs and Dev Tools:
     babel-plugin-styled-components
 
 Components:
-    Accordion
+    Activatables
     AspectRatioBox
     Box
     Button
@@ -54,4 +54,3 @@ Components:
     Switch/Toggle
     Stack
     Table
-    Tabs

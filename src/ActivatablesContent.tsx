@@ -1,19 +1,19 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { AccordionContext } from './AccordionContext'
+import { ActivatablesContext } from './ActivatablesContext'
 
 const OverflowContainer = styled.div`
 	overflow: hidden;
 `
 
-const AccordionCollapse = ({
+const ActivatablesContent = ({
 	id,
 	children,
 }: {
     id: string
     children: (active: boolean) => React.ReactNode
 }) => {
-	const { activeIds } = useContext(AccordionContext)
+	const { activeIds } = useContext(ActivatablesContext)
 	const active = activeIds.includes(id)
 
 	return (
@@ -23,6 +23,6 @@ const AccordionCollapse = ({
 	)
 }
 
-AccordionCollapse.displayName = 'AccordionCollapse'
+ActivatablesContent.displayName = 'ActivatablesContent'
 
-export { AccordionCollapse }
+export { ActivatablesContent }
