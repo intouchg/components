@@ -1,6 +1,6 @@
 {
   "name": "@i/components",
-  "version": "0.0.107",
+  "version": "0.0.108",
   "description": "React component library for the Intouch Design System",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -58,7 +58,7 @@
   "peerDependencies": {
     "react": ">=17.0.2",
     "react-dom": ">=17.0.2",
-    "react-spring": ">=9.0.0-rc.3",
+    "react-spring": ">=9.0.0",
     "styled-components": ">=5.2.3",
     "styled-system": ">=5.1.5",
     "typescript": ">=4.2.3"
