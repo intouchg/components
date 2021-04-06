@@ -45,6 +45,10 @@ export const customStyleFunction = system({
     // Grid
     gridTemplate: true,
 
+    // Animation
+    transform: true,
+    transition: true,
+
     // SVG
     fill: {
         property: 'fill',
@@ -59,7 +63,6 @@ export const customStyleFunction = system({
     // Text
     textDecoration: true,
     textTransform: true,
-
 })
 
 export type CustomStyleProps = {
