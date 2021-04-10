@@ -12,10 +12,7 @@ const ActivatablesClickable = ({
 	const active = activeIds.includes(id)
 
 	return (
-		<div
-			style={{ cursor: 'pointer' }}
-			onClick={() => toggleById(id)}
-		>
+		<div onClick={() => toggleById(id)}>
 			{children(active)}
 		</div>
 	)
