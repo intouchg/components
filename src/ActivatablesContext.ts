@@ -6,6 +6,7 @@ type ActivatablesContext = {
 }
 
 const ActivatablesContext = createContext({} as ActivatablesContext)
+
 ActivatablesContext.displayName = 'ActivatablesContext'
 
 export { ActivatablesContext }

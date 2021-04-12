@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { ActivatablesContext } from './ActivatablesContext'
-import { ActivatablesClickable } from './ActivatablesClickable'
-import { ActivatablesContent } from './ActivatablesContent'
+import { Activatable } from './Activatable'
 
 const Activatables = ({
 	defaultActiveId,
@@ -46,7 +45,6 @@ const Activatables = ({
 }
 
 Activatables.displayName = 'Activatables'
-Activatables.Clickable = ActivatablesClickable
-Activatables.Content = ActivatablesContent
+Activatables.Item = Activatable
 
 export { Activatables }

@@ -6,9 +6,8 @@ declare namespace JSX {
 
 export * from './core'
 
+export * from './Activatable'
 export * from './Activatables'
-export * from './ActivatablesClickable'
-export * from './ActivatablesContent'
 export * from './ActivatablesContext'
 export * from './Box'
 export * from './Button'
