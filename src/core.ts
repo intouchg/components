@@ -69,6 +69,10 @@ export type CustomStyleProps = {
     // Grid
     gridTemplate?: string
 
+    // Animation
+    transform?: string
+    transition?: string
+
     // SVG
     fill?: string
     stroke?: string
@@ -138,7 +142,7 @@ export type SXProps = {
 }
 
 
-
+export const media = (index: number) => (props: any) => `@media only screen and (min-width: ${props.theme.breakpoints[index]})`
 export const breakpoint = (index: number) => (props: any) => props.theme.breakpoints[index]
 export const space = (index: number) => (props: any) => props.theme.space[index]
 export const size = (index: number) => (props: any) => props.theme.sizes[index]

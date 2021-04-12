@@ -6,10 +6,12 @@ import { ActivatablesContent } from './ActivatablesContent'
 const Activatables = ({
 	defaultActiveId,
 	allowMultipleActive = false,
+	allowNoneActive = true,
 	children,
 }: {
     defaultActiveId?: string
     allowMultipleActive?: boolean
+	allowNoneActive?: boolean
     children: React.ReactNode
 }) => {
 	const previousDefaultActiveId = useRef(defaultActiveId)
@@ -25,6 +27,7 @@ const Activatables = ({
 
 	const toggleById = (id: string) => {
 		if (activeIds.includes(id)) {
+			if (!allowNoneActive && activeIds.length === 1) return
 			setActiveIds((ids) => ids.filter((i) => i !== id))
 		}
 		else if (allowMultipleActive) {
