@@ -1,28 +1,18 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState } from 'react'
 import { ActivatablesContext } from './ActivatablesContext'
-import { Activatable } from './Activatable'
 
 const Activatables = ({
-	defaultActiveId,
+	defaultActiveIds = [],
 	allowMultipleActive = false,
 	allowNoneActive = true,
 	children,
 }: {
-    defaultActiveId?: string
+    defaultActiveIds?: string[]
     allowMultipleActive?: boolean
 	allowNoneActive?: boolean
     children: React.ReactNode
 }) => {
-	const previousDefaultActiveId = useRef(defaultActiveId)
-	const [ activeIds, setActiveIds ] = useState(defaultActiveId ? [ defaultActiveId ] : [])
-
-	useEffect(() => {
-		// TO DO: Handle defaultActiveId changing after initial render
-		if (activeIds.join('') === previousDefaultActiveId.current) {
-			previousDefaultActiveId.current = defaultActiveId
-			setActiveIds(defaultActiveId ? [ defaultActiveId ] : [])
-		}
-	}, [ defaultActiveId ])
+	const [ activeIds, setActiveIds ] = useState(defaultActiveIds)
 
 	const toggleById = (id: string) => {
 		if (activeIds.includes(id)) {
@@ -45,6 +35,5 @@ const Activatables = ({
 }
 
 Activatables.displayName = 'Activatables'
-Activatables.Item = Activatable
 
 export { Activatables }
