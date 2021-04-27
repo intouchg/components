@@ -4,21 +4,21 @@ import { defaultVariantName } from '@i/theme'
 import { styleFunctions, variantsFunction, sx } from './core'
 import type { StyleProps, VariantProps, SXProps } from './core'
 
-const List = styled.ul<
+const ListItem = styled.li<
     & StyleProps
     & VariantProps
     & SXProps
 >`
     box-sizing: border-box;
-    ${variantsFunction('lists')}
+    ${variantsFunction('listItems')}
     ${styleFunctions}
     ${sx}
 `
 
-List.defaultProps = { variant: defaultVariantName }
+ListItem.defaultProps = { variant: defaultVariantName }
 
-;(List as any).themeComponent = 'list'
+;(ListItem as any).themeComponent = 'listItem'
 
-List.displayName = 'List'
+ListItem.displayName = 'ListItem'
 
-export { List }
+export { ListItem }

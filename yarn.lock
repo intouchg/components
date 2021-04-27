@@ -982,9 +982,9 @@
   integrity sha1-8xDEOSyIs3bujsGydf8d9UTM4U8=
 
 "@i/theme@latest":
-  version "0.0.60"
-  resolved "https://intazdoweb.intouchsol.com/IntouchDesignSystem/_packaging/IntouchDesignSystem/npm/registry/@i/theme/-/theme-0.0.60.tgz#c4e8769c85f4a021189437c4bf7d71e3495961fa"
-  integrity sha1-xOh2nIX0oCEYlDfEv31x40lZYfo=
+  version "0.0.61"
+  resolved "https://intazdoweb.intouchsol.com/IntouchDesignSystem/_packaging/IntouchDesignSystem/npm/registry/@i/theme/-/theme-0.0.61.tgz#d7d64c169471e4b02d86cc983ec1fdc6dc990129"
+  integrity sha1-19ZMFpRx5LAthsyYPsH9xtyZASk=
   dependencies:
     "@babel/runtime" "7.13.10"
     "@i/utility" latest
