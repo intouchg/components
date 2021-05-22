@@ -1,16 +1,17 @@
 import React, { useContext } from 'react'
 import { ActivatablesContext } from './ActivatablesContext'
+import type { ActivatableId } from './ActivatablesContext'
 
 const Activatable = ({
 	id,
 	children,
 }: {
-    id: string
+    id: ActivatableId
     children: (props: {
 		active: boolean
 		toggleActive: () => void
-		activeIds: string[]
-		setActiveIds: (ids: string[]) => void
+		activeIds: ActivatableId[]
+		setActiveIds: (ids: ActivatableId[]) => void
 	}) => React.ReactNode
 }) => {
 	const { activeIds, setActiveIds, toggleById } = useContext(ActivatablesContext)

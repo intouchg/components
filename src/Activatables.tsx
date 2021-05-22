@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { ActivatablesContext } from './ActivatablesContext'
+import type { ActivatableId } from './ActivatablesContext'
 
 const Activatables = ({
 	defaultActiveIds = [],
@@ -7,14 +8,14 @@ const Activatables = ({
 	allowNoneActive = true,
 	children,
 }: {
-    defaultActiveIds?: string[]
+    defaultActiveIds?: ActivatableId[]
     allowMultipleActive?: boolean
 	allowNoneActive?: boolean
     children: React.ReactNode
 }) => {
 	const [ activeIds, setActiveIds ] = useState(defaultActiveIds)
 
-	const toggleById = (id: string) => {
+	const toggleById = (id: ActivatableId) => {
 		if (activeIds.includes(id)) {
 			if (!allowNoneActive && activeIds.length === 1) return
 			setActiveIds((ids) => ids.filter((i) => i !== id))

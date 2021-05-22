@@ -1,9 +1,11 @@
 import { createContext } from 'react'
 
+export type ActivatableId = string | number
+
 type ActivatablesContext = {
-    activeIds: string[]
-    setActiveIds: (ids: string[]) => void
-    toggleById: (id: string) => void
+    activeIds: ActivatableId[]
+    setActiveIds: (ids: ActivatableId[]) => void
+    toggleById: (id: ActivatableId) => void
 }
 
 const ActivatablesContext = createContext({} as ActivatablesContext)
