@@ -28,7 +28,7 @@ const Activatables = ({
 	}
 
 	return (
-		<ActivatablesContext.Provider value={{ activeIds, toggleById }}>
+		<ActivatablesContext.Provider value={{ activeIds, setActiveIds, toggleById }}>
 			{children}
 		</ActivatablesContext.Provider>
 	)

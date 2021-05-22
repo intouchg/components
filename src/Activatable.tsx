@@ -6,12 +6,17 @@ const Activatable = ({
 	children,
 }: {
     id: string
-    children: (props: { active: boolean, onClick: () => void }) => React.ReactNode
+    children: (props: {
+		active: boolean
+		toggleActive: () => void
+		activeIds: string[]
+		setActiveIds: (ids: string[]) => void
+	}) => React.ReactNode
 }) => {
-	const { activeIds, toggleById } = useContext(ActivatablesContext)
+	const { activeIds, setActiveIds, toggleById } = useContext(ActivatablesContext)
 	const active = activeIds.includes(id)
-	const onClick = () => toggleById(id)
-	return children({ active, onClick })
+	const toggleActive = () => toggleById(id)
+	return children({ active, toggleActive, activeIds, setActiveIds })
 }
 
 Activatable.displayName = 'Activatable'
