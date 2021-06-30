@@ -12,7 +12,7 @@ const Activatable = ({
 		toggleActive: () => void
 		activeIds: ActivatableId[]
 		setActiveIds: (ids: ActivatableId[]) => void
-	}) => React.ReactNode
+	}) => JSX.Element
 }) => {
 	const { activeIds, setActiveIds, toggleById } = useContext(ActivatablesContext)
 	const active = activeIds.includes(id)
