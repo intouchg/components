@@ -1,4 +1,0 @@
-- [ ] Unit tests
-- [ ] Confirm tree shaking
-- [ ] Fix style props appearing in the DOM using `createShouldForwardProp`
-- [ ] More performance profiling
