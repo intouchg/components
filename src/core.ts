@@ -4,8 +4,8 @@ import memoize from '@emotion/memoize'
 import { props as defaultThemePropStrings } from '@styled-system/should-forward-prop'
 import { customThemeProps, defaultVariantName } from '@i/theme'
 import type { LayoutProps, FlexboxProps, GridProps, PositionProps, SpaceProps, ColorProps, BackgroundProps, BorderProps, ShadowProps, TypographyProps } from 'styled-system'
-import type { StyleProperty, componentVariantsPropertyMap, Theme } from '@i/theme'
-
+import type { StyleProperty, componentVariantsPropertyMap } from '@i/theme'
+import type {} from 'styled-components/cssprop'
 
 
 export const variantsFunction = (themePropName: typeof componentVariantsPropertyMap[keyof typeof componentVariantsPropertyMap]) => variant({ scale: themePropName, variants: { [defaultVariantName]: {} } })
