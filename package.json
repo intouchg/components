@@ -1,12 +1,12 @@
 {
   "name": "@i/components",
-  "version": "0.0.119",
+  "version": "0.0.120",
   "description": "React component library for the Intouch Design System",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "repository": "https://intazdoweb.intouchsol.com/IntouchDesignSystem/IntouchDesignSystem/_git/components",
   "author": "Intouch Group",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "sideEffects": false,
   "scripts": {
     "prebuild": "rimraf dist && npm run typegen",
