@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
-import { defaultVariantName } from '@i/theme'
+import { defaultVariantName } from '@intouchg/theme'
 import { checkboxSharedStyles, borderAndBackgroundProps } from './Checkbox'
 import { styleFunctions, variantsFunction, filterThemeProps, sx } from './core'
 import { DotIcon } from './DotIcon'

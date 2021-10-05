@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "target": "es6",
     "module": "commonjs",
     "moduleResolution": "node",
@@ -13,9 +14,8 @@
     "emitDeclarationOnly": true,
     "outDir": "dist",
     "resolveJsonModule": true,
-    "noImplicitThis": false,
-    "baseUrl": "./src"
+    "noImplicitThis": false
   },
-  "include": ["./src"],
-  "exclude": ["./node_modules/**/*"]
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules"]
 }

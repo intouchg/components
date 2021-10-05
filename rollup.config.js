@@ -1,6 +1,5 @@
 import babel from '@rollup/plugin-babel'
 import resolve from '@rollup/plugin-node-resolve'
-import { eslint } from 'rollup-plugin-eslint'
 import { terser } from 'rollup-plugin-terser'
 import { sizeSnapshot } from 'rollup-plugin-size-snapshot'
 import pkg from './package.json'
@@ -31,22 +30,15 @@ const babelOptions = {
     ],
 }
 
-const eslintOptions = {
-    fix: true,
-    configFile: './.eslintrc.js',
-    include: 'src',
-}
-
 export default [
     {
         ...baseConfig,
         output: { file: pkg.module, format: 'esm' },
         plugins: [
             resolve({ extensions }),
-            eslint(eslintOptions),
             babel(babelOptions),
-            terser(),
             sizeSnapshot(),
+            terser(),
         ],
     },
 ]

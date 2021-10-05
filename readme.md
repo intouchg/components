@@ -1,34 +1,13 @@
-# @i/components
+# @intouchg/components
 
-React component library for the [Intouch Design System](https://ids.intouchg.co)
+React component library for the [Intouch Design System](https://ids.intouchg.co/)
 <br>
-
-
 
 ### Architecture
 
 ##### `shouldForwardProp` and `createShouldForwardProp`
 
 This lib exports a custom `createShouldForwardProp` function for use with the `shouldForwardProp` option in `styled-components` or `@emotion`. This lib's `createShouldForwardProp` function accepts an array of strings representing the prop names to forward. The `createShouldForwardProp` function will automatically forward all HTML attributes and filter all default and custom `styled-system` props.
-
-
-
-### Notes / To Do
-
-General:
-	- [ ] Unit tests
-	- [ ] Confirm tree shaking
-	- [ ] Remove `createShouldForwardProp` if `Image` component is unused
-	- [ ] Performance profiling stats
-
-Components:
-	- [ ] Calendar
-	- [ ] DateTime
-	- [ ] Form
-	- [ ] FormItem/FormField
-	- [ ] Modal
-	- [ ] Table
-
 
 
 ### Prior Art

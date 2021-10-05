@@ -1,5 +1,5 @@
 module.exports = {
     extends: [
-        require.resolve('@i/eslint-config'),
+        require.resolve('@intouchg/eslint-config'),
     ],
 }

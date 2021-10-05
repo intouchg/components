@@ -1,5 +1,7 @@
+// eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace JSX {
     interface ElementChildrenAttribute {
+        // eslint-disable-next-line @typescript-eslint/ban-types
         children: {} // Allow type defs for React component children prop
     }
 }

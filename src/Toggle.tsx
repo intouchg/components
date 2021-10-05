@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
-import { defaultVariantName, paddingProps, backgroundProps } from '@i/theme'
+import { defaultVariantName, paddingProps, backgroundProps } from '@intouchg/theme'
 import { styleFunctions, variantsFunction, filterThemeProps, sx } from './core'
 import { DotIcon } from './DotIcon'
 import type { StyleProps, VariantProps, SXProps } from './core'

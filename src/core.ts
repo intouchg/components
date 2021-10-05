@@ -2,9 +2,9 @@ import { system, variant, compose, space as spaceFn, layout, flexbox, grid, posi
 import isHTMLProp from '@emotion/is-prop-valid'
 import memoize from '@emotion/memoize'
 import { props as defaultThemePropStrings } from '@styled-system/should-forward-prop'
-import { customThemeProps, defaultVariantName } from '@i/theme'
+import { customThemeProps, defaultVariantName } from '@intouchg/theme'
 import type { LayoutProps, FlexboxProps, GridProps, PositionProps, SpaceProps, ColorProps, BackgroundProps, BorderProps, ShadowProps, TypographyProps } from 'styled-system'
-import type { StyleProperty, componentVariantsPropertyMap } from '@i/theme'
+import type { StyleProperty, componentVariantsPropertyMap } from '@intouchg/theme'
 
 
 
@@ -13,8 +13,6 @@ export const variantsFunction = (themePropName: typeof componentVariantsProperty
 export type VariantProps = { variant?: string }
 
 
-
-export const callAll = (...fns: Function[]) => (...args: any[]) => fns.forEach(fn => fn && fn(...args))
 
 const customThemePropStrings: string[] = []
 
