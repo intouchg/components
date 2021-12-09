@@ -1,6 +1,6 @@
 {
 	"name": "@intouchg/components",
-	"version": "0.2.0-alpha.3",
+	"version": "0.2.0-alpha.4",
 	"description": "React component library for the Intouch Design System",
 	"module": "dist/index.esm.js",
 	"types": "dist/index.d.ts",
@@ -12,6 +12,7 @@
 		"prepare": "husky install",
 		"prebuild": "npm run lint && npm run prettier && rimraf dist",
 		"build": "rollup -c",
+		"prepublishOnly": "npm run build",
 		"lint": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
 		"prettier": "prettier --write .",
 		"pretty-quick": "pretty-quick --staged"
