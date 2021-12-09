@@ -46,7 +46,7 @@ const reset = css`
 	}
 `
 
-export const GlobalStyle = createGlobalStyle<{
+export const Global = createGlobalStyle<{
 	reset?: boolean
 	style: Interpolation<ThemedStyledProps<any, DefaultTheme>>
 }>`
