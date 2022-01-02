@@ -1,6 +1,6 @@
 {
 	"name": "@intouchg/components",
-	"version": "0.2.0-alpha.4",
+	"version": "0.2.0-alpha.5",
 	"description": "React component library for the Intouch Design System",
 	"module": "dist/index.esm.js",
 	"types": "dist/index.d.ts",
@@ -9,16 +9,15 @@
 	"license": "MIT",
 	"sideEffects": false,
 	"scripts": {
+		"build": "npm run lint && npm run prettier && rimraf dist && rollup -c",
 		"prepare": "husky install",
-		"prebuild": "npm run lint && npm run prettier && rimraf dist",
-		"build": "rollup -c",
 		"prepublishOnly": "npm run build",
 		"lint": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
 		"prettier": "prettier --write .",
 		"pretty-quick": "pretty-quick --staged"
 	},
 	"dependencies": {
-		"@intouchg/substate": "0.0.1-alpha.1",
+		"@intouchg/substate": "0.0.1",
 		"styled-components": "5.3.1",
 		"react": "17.0.2"
 	},

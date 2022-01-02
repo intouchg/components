@@ -1041,10 +1041,10 @@
   resolved "https://registry.yarnpkg.com/@intouchg/prettier-config/-/prettier-config-0.1.0.tgz#2ea394f808c4384a3b509caf1879abb7a67e3a03"
   integrity sha512-SE3kxKi5yMp4bybOALDbOhutngdDKo6QejJ//qY8HJbabJii6uzTj9CVQFwEyyDJjYsDQcVDk6iASXqhBo5Hew==
 
-"@intouchg/substate@0.0.1-alpha.1":
-  version "0.0.1-alpha.1"
-  resolved "https://registry.yarnpkg.com/@intouchg/substate/-/substate-0.0.1-alpha.1.tgz#4f84062683d4c0f62a2baadb2a583f8c24900de4"
-  integrity sha512-MJsz27hvEf9LmM1toLj9+wiSekozarIVvm1c3i//Y/DPdimthBdCz3kwfdARj9d+/JxDj2N4/2ICSllBbUIsuQ==
+"@intouchg/substate@0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@intouchg/substate/-/substate-0.0.1.tgz#d669318f40f99852d573a5ea7029f362c6fa776e"
+  integrity sha512-6IbOMB/HhCzQkjJx56NvIk/Ic2CkrMeXHslFuqjj/AKQIf6tFmW+4GGelNKml2yXJUZ5mwWh4+qu8iBn52QwLw==
 
 "@jest/types@^26.6.2":
   version "26.6.2"
