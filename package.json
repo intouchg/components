@@ -1,10 +1,10 @@
 {
   "name": "@intouchg/components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React component library for the Intouch Design System",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
-  "repository": "https://intazdoweb.intouchsol.com/IntouchDesignSystem/IntouchDesignSystem/_git/components",
+  "repository": "https://github.com/intouchg/components",
   "author": "Intouch Group",
   "license": "MIT",
   "sideEffects": false,
