@@ -1,0 +1,16 @@
+{
+	"editor.detectIndentation": false,
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"eslint.validate": ["javascript", "typescript"],
+	"javascript.preferences.importModuleSpecifier": "relative",
+	"typescript.preferences.importModuleSpecifier": "relative",
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
+}
