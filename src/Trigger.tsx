@@ -76,15 +76,19 @@ export const Trigger = ({
 }
 
 export const useTrigger = (id?: string | number) => {
-	const { state, store } = useSubState(id)
+	const { state, store } = useSubState<boolean>(id)
 	const { getActiveIds, setActiveIds, setActiveById, toggleById } =
 		useContext(TriggerContext)
 
 	return {
 		id,
 		active: state,
-		setActive: (active: boolean) => void (id && setActiveById(id, active)),
-		toggleActive: () => void (id && toggleById(id)),
+		setActive: (active: boolean) => {
+			if (id !== undefined) setActiveById(id, active)
+		},
+		toggleActive: () => {
+			if (id !== undefined) toggleById(id)
+		},
 		getActiveIds,
 		setActiveIds,
 		setActiveById,
