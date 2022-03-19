@@ -5,14 +5,14 @@ import {
 	SubStateProvider,
 } from '@intouchg/substate'
 
-type TriggersContext = {
+type TriggerFunctions = {
 	getActiveIds: () => (string | number)[]
 	setActiveIds: (ids: (string | number)[]) => void
 	setActiveById: (id: string | number, active: boolean) => void
 	toggleById: (id: string | number) => void
 }
 
-export const TriggersContext = createContext<TriggersContext>({} as any)
+export const TriggerContext = createContext<TriggerFunctions>({} as any)
 
 const createObject = (ids?: (string | number)[]) => {
 	if (!ids) return {}
@@ -26,7 +26,7 @@ const createObject = (ids?: (string | number)[]) => {
 const getActiveCount = (store: Record<string | number, boolean>) =>
 	Object.values(store).filter((v) => v).length
 
-export const Triggers = ({
+export const Trigger = ({
 	defaultActiveIds,
 	allowMultiActive = true,
 	allowNoneActive = true,
@@ -61,7 +61,7 @@ export const Triggers = ({
 			.map(([k]) => k)
 	return (
 		<SubStateProvider value={{ store, setStore, subscribe }}>
-			<TriggersContext.Provider
+			<TriggerContext.Provider
 				value={{
 					getActiveIds,
 					setActiveIds,
@@ -70,45 +70,25 @@ export const Triggers = ({
 				}}
 			>
 				{children}
-			</TriggersContext.Provider>
+			</TriggerContext.Provider>
 		</SubStateProvider>
 	)
 }
 
-type TriggerChildrenFnProps = Omit<TriggersContext, 'getActiveIds'> & {
-	id?: string | number
-	active: boolean
-	setActive: React.Dispatch<React.SetStateAction<boolean>>
-	toggleActive: React.DispatchWithoutAction
-	activeIds: (string | number)[]
-	getIds: () => (string | number)[]
-}
-
-export const Trigger = ({
-	id,
-	children,
-}: {
-	id?: string | number
-	children:
-		| React.ReactNode
-		| ((props: TriggerChildrenFnProps) => React.ReactNode)
-}) => {
-	const { state, setState, store } = useSubState(id, false)
+export const useTrigger = (id?: string | number) => {
+	const { state, store } = useSubState(id, false)
 	const { getActiveIds, setActiveIds, setActiveById, toggleById } =
-		useContext(TriggersContext)
+		useContext(TriggerContext)
 
-	if (typeof children === 'function')
-		return children({
-			id,
-			active: state,
-			setActive: setState,
-			toggleActive: () => setState((s) => !s),
-			activeIds: getActiveIds(),
-			setActiveIds,
-			setActiveById,
-			toggleById,
-			getIds: () => Object.keys(store),
-		})
-
-	return children
+	return {
+		id,
+		active: state,
+		setActive: (active: boolean) => void (id && setActiveById(id, active)),
+		toggleActive: () => void (id && toggleById(id)),
+		getActiveIds,
+		setActiveIds,
+		setActiveById,
+		toggleById,
+		getIds: () => Object.keys(store),
+	}
 }

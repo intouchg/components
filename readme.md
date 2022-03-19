@@ -13,12 +13,6 @@ yarn add @intouchg/components styled-components
 
 ## Basic Components
 
-### Layout
-
--   `Flex` - `styled.div({ display: 'flex' })`
--   `Stack` - `styled.div({ display: 'flex', flexDirection: 'column' })`
--   `Grid` - `styled.div({ display: 'grid' })`
-
 ### Form
 
 -   `Checkbox` - controlled or uncontrolled, native accessibility
@@ -29,59 +23,68 @@ yarn add @intouchg/components styled-components
 ### Styles
 
 -   `Global` - has two props, `reset` for applying the CSS reset, and `style` which wraps [`createGlobalStyle`](https://styled-components.com/docs/api#createglobalstyle)
--   `Apply` - use the `css` prop to apply the generated classname to all children (non-recursive) without a wrapping element
+-   `Apply` - use the `css` prop to apply the generated classname to all children (non-recursive) without a wrapping element. Useful for tiling by applying margins on arbitrary components.
 
-## Triggers
+## Trigger
 
--   `Triggers` - a [`SubStateProvider`](https://github.com/codynova/substate) with an api for tracking child `Trigger` binary state
+-   `<Trigger />` - a [`SubStateProvider`](https://github.com/codynova/substate) with an api for tracking a hashmap of binary states. Useful for tabs, accordions, carousels, etc.
 
-    -   `defaultActiveIds` - array of child `Trigger` ids
+    -   `defaultActiveIds` - array of ids
     -   `allowMultiActive` - allow multiple active ids, default `true`
     -   `allowNoneActive` - allow zero active ids, default `true`
     -   `children` - standard React children
 
--   `Trigger`
+-   `const trigger = useTrigger(id)` - wires a component up to the `<Trigger />` context provider
 
-    -   `id` - string, number, or undefined (substate key)
-    -   `children` - standard React children **or** children as a function:
+    -   `id` - string, number, or undefined (a substate key)
 
 ```tsx
-type TriggerChildrenFnProps = {
+type TriggerProps = {
 	id?: string | number
 	active: boolean
 	setActive: React.Dispatch<React.SetStateAction<boolean>>
 	toggleActive: React.DispatchWithoutAction
-	activeIds: (string | number)[]
+	getActiveIds: () => (string | number)[]
 	setActiveIds: (ids: (string | number)[]) => void
 	setActiveById: (id: string | number, active: boolean) => void
 	toggleById: (id: string | number) => void
 	getIds: () => (string | number)[]
 }
 
-const Example = () => (
-	<Triggers>
-		<Stack>
-			<Trigger id="1">
-				{({
-					id, // the id of this trigger
-					active, // if this id is active
-					setActive, // set this id's active state
-					toggleActive, // toggle this id's active state
-					activeIds, // all active ids
-					setActiveIds, // set all active ids
-					setActiveById, // set some id's active state
-					toggleById, // toggle some id's active state
-					getIds, // get all ids regardless of active state
-				}) => (
-					<button
-						css={{ color: active ? 'green' : 'red' }}
-						onClick={toggleActive}
-					>
-						Toggle id "1" active
-					</button>
-				)}
-			</Trigger>
-		</Stack>
+const Child = ({ triggerId }) => {
+	const {
+		id, // the id of this trigger
+		active, // if this id is active
+		setActive, // set this id's active state
+		toggleActive, // toggle this id's active state
+		getActiveIds, // get all active ids
+		setActiveIds, // set all active ids
+		setActiveById, // set some id's active state
+		toggleById, // toggle some id's active state
+		getIds, // get all ids regardless of active state
+	} = useTrigger(triggerId)
+	return (
+		<div>
+			<span
+				style={{ color: active ? 'green' : 'red' }}
+			>
+				Active: {active}
+			</span>
+			<button onClick={tggleActive}>
+				Toggle {id} active
+			</button>
+		</div>
+	)
+}
+
+const Parent = () => (
+	<Trigger
+		defaultActiveIds={[ '1' ]}
+		allowMultiActive={false}
+		allowNonActive={false}
+	>
+		<Child triggerId="1" />
+		<Child triggerId="2" />
 	</Triggers>
 )
 ```
