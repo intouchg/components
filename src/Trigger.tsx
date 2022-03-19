@@ -76,7 +76,7 @@ export const Trigger = ({
 }
 
 export const useTrigger = (id?: string | number) => {
-	const { state, store } = useSubState(id, false)
+	const { state, store } = useSubState(id)
 	const { getActiveIds, setActiveIds, setActiveById, toggleById } =
 		useContext(TriggerContext)
 
